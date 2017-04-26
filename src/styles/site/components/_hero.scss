@@ -1,0 +1,33 @@
+.hero{
+  background-size:cover;
+  background-position: left center;
+  height:100vh;
+  overflow: hidden;
+  position: relative;
+  &:before{
+      content: ' ';
+      position: absolute;
+      height: 100vh;
+      width: 100%;
+      background-color: rgba(0,0,0,0.3);
+      display: block;
+  }
+  video{
+      min-width: 100%;
+      min-height: 100vh;
+  }
+  $hero-padding:50px;
+  .hero-content{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+	h1{
+	  @include font-sans-serif(105px);
+      color: $color-white;
+	}
+    img{
+        width: 100%;
+    }
+  }
+}

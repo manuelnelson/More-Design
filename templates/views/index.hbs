@@ -1,0 +1,39 @@
+{{!< default}}
+<section class="hero" style="background-image:url({{data.home.backgroundImage.url}})">
+	<div class="hero-content">
+		<div class="logo"></div>
+		<h1>Emmanuel Nelson</h1>
+		<!-- <div class="spacer"></div> -->
+		<h3><span>Front-End</span><span>Node</span><span>.NET Developer</span></h3>
+	</div>
+
+</section>
+<section class="work" id="work">
+	{{#each data.home.work}}
+		{{> work this}}
+	{{/each}}
+</section>
+<section class="section about" id="about">
+	<div class="panel about-panel">
+		<h2>About</h2>
+		<div class="rich-text dark-background">
+			{{{data.home.about}}}
+		</div>
+        <h4>Some (Older) Work</h4>
+		<div class="rich-text dark-background">
+	        <ul>
+	            <li><a href="https://github.com/manuelnelson/BoilerPlateMVC">ASP.NET MVC Boiler Plate Solution</a></li>
+	            <li><a href="https://github.com/manuelnelson/AudioLibraryJs">Audio Waveforms/Player with WebAPI</a></li>
+	        </ul>
+		</div>
+    </div>
+	<div class="panel contact-panel">
+        <h2>Contact</h2>
+		<div class="rich-text dark-background">
+			{{{data.home.contact}}}
+		</div>
+    </div>
+</section>
+<section class="section">
+
+</section>

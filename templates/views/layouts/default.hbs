@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="portfolio">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Emmanuel Nelson</title>
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<link href="/js/site.css" rel="stylesheet" type="text/css" >
+        <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+		{{!-- This file provides the default styling for the KeystoneJS Content Editor
+			- only renders when user is logged in and admin--}}
+		{{{isAdminEditorCSS user}}}
+
+		{{!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+		//- Safely remove this block if you are not targeting IE8 --}}
+		<!--[if lt IE 9]>
+			<!--<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" />-->
+			<!--<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js" />-->
+		<![endif]-->
+        <link href='//fonts.googleapis.com/css?family=Noto+Sans:300,400,700|Rasa:300,400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		{{> header}}
+		{{{body}}}
+		<!--<div class="container">-->
+			<!--<div id="footer">-->
+				<!--<p>Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.</p>-->
+			<!--</div>-->
+		<!--</div>-->
+
+		{{> js-footer}}
+		{{{isAdminEditorJS user}}}
+	</body>
+</html>

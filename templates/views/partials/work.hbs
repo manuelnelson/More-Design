@@ -1,0 +1,25 @@
+<div work-tile class="work-tile" data-index="{{@index}}" ng-class="{'show-more':showMore}">
+	<img src="{{image.url}}" alt="{{name}}"/>
+	<div class="view">
+		<a href="{{link}}" target="_blank"><i class="fa fa-eye"></i> View Site</a>
+	</div>
+	<div class="lead-content">
+		<div class="container">
+			<span class="read-more" ng-click="readMore();">Read More<i class="icon-enlarge2"></i></span>
+            <span class="close" ng-click="close();">Close<i class="icon-cross"></i></span>
+			<h4 class="name">{{name}}</h4>
+			<div class="roles">
+				{{#each roles}}
+					<span class="role">{{name}}</span>
+				{{/each}}
+			</div>
+            <div class="description">
+				<h4>Features & Technologies</h4>
+				{{{content.full}}}
+            </div>
+            <div class="company">
+                <p>Made with company: <span>{{company}}</span></p>
+            </div>
+		</div>
+	</div>
+</div>

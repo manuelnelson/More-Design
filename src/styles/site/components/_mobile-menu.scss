@@ -1,0 +1,37 @@
+.mobile-menu{
+    $padding-top: 80px;
+    background-size:cover;
+    width:100vw;
+    height:calc(100vh - #{$padding-top});
+    position:fixed;
+    top:-200vh;
+    color:white;
+    background-image:linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.99));
+    z-index: 90;
+    transition:all 0.5s ease-in-out;
+    padding-top: $padding-top;
+    &.show{
+        top:0;
+    }
+    ul{
+        padding-top:100px;
+    li{
+        width:100%;
+        border-bottom:3px solid $color-secondary;
+        margin-bottom:20px;
+        transition:all 0.5s ease-in-out;
+        &:hover{
+            border-bottom-color:white;
+        }
+        a{
+            font-size:3em;
+            color:$color-secondary;
+            transition:all 0.5s ease-in-out;
+            padding-left:20px;
+            &:hover{
+                color:white;
+            }
+        }
+    }
+    }
+}
