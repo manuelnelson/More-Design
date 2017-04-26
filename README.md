@@ -1,4 +1,4 @@
-# Emmanuel Nelson's Portfolio
+# More Design Architect Site
 ## Getting started
 1. Fork and clone repository
 2. run 'npm install'
@@ -7,5 +7,5 @@
 ##Tech Stack
 1. Database - MongoDb
 2. Backend - [Node](https://nodejs.org/en/download/)
-3. [Keystone](keystonejs.com/) as CMS 
+3. [Keystone](keystonejs.com/) as CMS
 4. Front-end uses [Webpack v2](https://webpack.js.org/) and soon to be [Angular 2](https://angular.io/) with Typescript.

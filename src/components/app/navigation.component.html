@@ -6,8 +6,8 @@
 	</nav>
 	<div class="mobile-menu" [ngClass]="{'show':showMenu}">
 		<ul>
-			<li><a pageScroll (click)="toggleMenu()" href="#work">Work</a></li>
-			<li><a pageScroll (click)="toggleMenu()" href="#about">About</a></li>
+			<li><a [routerLink]="['/projects']" (click)="toggleMenu()">Projects</a></li>
+			<li><a [routerLink]="['/about']" (click)="toggleMenu()">About</a></li>
 		</ul>
 	</div>
 </header>

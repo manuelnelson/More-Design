@@ -6,12 +6,12 @@ import { RestService } from './services/rest.service';
 import { AppRoutingModule }  from './app.routing';
 
 import {
-    HomeComponent, CarouselComponent, AppComponent  
+    HomeComponent, CarouselComponent, AppComponent, NavigationComponent,ProjectComponent
 } from './components/';
 
 @NgModule({
     bootstrap: [ AppComponent ],
-    declarations: [ HomeComponent, CarouselComponent, AppComponent],
+    declarations: [ HomeComponent, CarouselComponent, AppComponent, NavigationComponent, ProjectComponent],
     imports: [
         BrowserModule,
         HttpModule,

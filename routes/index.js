@@ -40,6 +40,7 @@ exports = module.exports = function(app) {
 	keystone.redirect('/home', '/index.html');
 
 	app.get('/api/homes', routes.api.homes);
+	app.get('/api/projects', routes.api.projects);
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);

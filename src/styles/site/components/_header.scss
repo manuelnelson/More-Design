@@ -1,83 +1,22 @@
 header{
-    $header-height:80px;
-    $menu-button-height:50px;
-    $menu-button-width:54px;
-    $line-width:40px;
-    $line-height:4px;
-    $line-gap: 10px;
     $tranistion-duration: 0.5s;
     position:fixed;
     top:0;
     height:$header-height;
     width:100%;
     z-index: 100;
-    background-image:linear-gradient(0deg, rgba(0,0,0,0), rgba(0,0,0,0.5));
-    $menu-shrink-ratio: 1.5;
-    &.active{
-        $icon-color: $color-primary-inverse;
-        $background-color: lighten($color-secondary,10%);
-        height:$header-height / $menu-shrink-ratio + 6px;
-        background-color: rgba(0,0,0,1);
-        background-image:linear-gradient(0deg, rgba($color-secondary,0.8), rgba($color-secondary,1));
-
-        //background-image: none;
-        .menu{
-            height: $menu-button-height / $menu-shrink-ratio;
-            width: $menu-button-width / $menu-shrink-ratio;
-            top:($header-height - $menu-button-height)/(2 * $menu-shrink-ratio);
-            border-color: $icon-color;
-        }
-        .menu-button{
-            height:$line-height / $menu-shrink-ratio;
-            width: $line-width / $menu-shrink-ratio;
-            background-color: $icon-color;
-            bottom: (-($menu-button-height/2) + ($line-height/2) ) / $menu-shrink-ratio;
-            &:before, &:after{
-                height:$line-height / $menu-shrink-ratio;
-                width: $line-width / $menu-shrink-ratio;
-                background-color: $icon-color;
-            }
-            &:before{
-                top: -1 * $line-gap / $menu-shrink-ratio
-            }
-            &:after{
-                bottom: -1 * $line-gap / $menu-shrink-ratio
-            }
-            &.close{
-                &:after{
-                    bottom: -0.3rem;
-                }
-            }
-        }
-
-        .bicycle-container{
-            right: px-to-rem(20px);
-            transition: right $bike-animation-duration linear;
-            .bicycle{
-                .wheel{
-                    animation: spin $bike-spin-duration ($bike-animation-duration / $bike-spin-duration) linear;
-                }
-                .spoke{
-                    visibility: hidden;
-                    transition: visibility 0s linear $bike-animation-duration;
-                }
-            }
-        }
-    }
     nav{
         position: relative;
         z-index: 100;
         height: 100%;
         .menu{
             height:$menu-button-height;
-            position:relative;
+            position:absolute;
             top:($header-height - $menu-button-height)/(2);
-            margin-left:20px;
+            right: $header-page-margin;
             width:$menu-button-width;
-            border:solid 2px $color-secondary;
             //border-radius:8px;
             cursor: pointer;
-            top: 14px;
             transition: height $tranistion-duration ease-in-out, width $tranistion-duration ease-in-out;
 
         }
@@ -110,47 +49,19 @@ header{
                 height:0;
                 &:before{
                     transform:rotate(45deg);
-                    top:.08rem;
+                    top:-3px;
                     background-color:$color-white;
 
                 }
                 &:after{
                     transform:rotate(-45deg);
-                    bottom:-.4rem;
+                    bottom:0;
                     background-color:$color-white;
                 }
             }
         }
 
     }
-    .bicycle-container{
-        position: absolute;
-        right: px-to-rem(-380px);
-        top: 0;
-        visibility: visible;
-        transition: right 0s linear;
-        overflow: visible;
-        display: flex;
-        .bicycle{
-            .spoke{
-                //hide spokes once animation complete
-                visibility: visible;
-                transition: visibility 0s linear;
-            }
-        }
-    }
-    .logo{
-        @include font-sans-serif(40px);
-        line-height: px-to-rem(64px);
-        letter-spacing: -5px;
-        white-space: nowrap;
-        color:$color-primary-inverse;
-        display: inline-block;
-        margin-left: px-to-rem(10px);
-    }
     @include bp-max($bp-between){
-        .logo{
-            line-height: px-to-rem(80px);
-        }
     };
 }
