@@ -1,10 +1,21 @@
 import { Component } from '@angular/core';
-
+import { Router, RoutesRecognized } from '@angular/router';
 @Component({
     selector: 'app-component',
     template: require('./app.component.html')
 })
-export class AppComponent {
-    constructor() {
+export class AppComponent{
+    isDark: boolean = false;
+    constructor(private router: Router) {
+        this.router.events.subscribe(event => {
+        if (event instanceof RoutesRecognized) {
+            if(event.url == '/')
+            {
+                this.isDark = true;
+            }else{
+                this.isDark = false;
+            }
+        }
+    });
     }
 }

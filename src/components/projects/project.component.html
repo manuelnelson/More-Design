@@ -2,9 +2,7 @@
 	<section class="project-section">
 		<div class="project-tab-section">
 			<span class="tab">All</span>
-			<span class="tab">Retail</span>
-			<span class="tab">Residential</span>
-			<span class="tab">Commerical</span>
+			<span class="tab" *ngFor="let projectType of projectTypes">{{projectType.name}}</span>
 		</div>
 		<div class="project-list">
 			<div class="project-item">

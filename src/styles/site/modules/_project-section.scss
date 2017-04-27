@@ -1,0 +1,16 @@
+.project-section{
+    .project-tab-section{
+        text-align: center;
+        font-size: px-to-rem(20px);
+        color: $color-medium-gray;
+    }
+    .tab{
+        display: inline-block;
+        margin-left: 24px;
+        cursor: pointer;
+        transition: color 0.2s ease-in-out;
+        &.active, &:hover{
+            color: darken($color-medium-gray,20%);
+        }
+    }
+}

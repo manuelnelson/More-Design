@@ -4,9 +4,7 @@
 	keystone = require('keystone'),
 
 exports = module.exports = function(req, res) {
-	keystone.list('Project').model.find().populate({
-		path: 'type'
-	}).exec(function(err,result){
+	keystone.list('ProjectType').model.find().exec(function(err,result){
 		return res.json({success:true,data:result});
 	})
 };

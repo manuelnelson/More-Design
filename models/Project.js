@@ -14,8 +14,9 @@ var Project = new keystone.List('Project', {
 Project.add({
 	title: { type: String, required: true },
 	date: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
-	location: { type: String, required: true },
-	type: { type: String, required: true },
+	location: { type: String },
+	thumbnailImage: { type: Types.CloudinaryImage },
+	type: { type: Types.Relationship, ref: 'ProjectType'},
 	images: { type: Types.Relationship, ref: 'ProjectSlide', many: true},
 });
 

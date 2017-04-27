@@ -1,11 +1,12 @@
 .mobile-menu{
+    $mobile-menu-color: $color-medium-gray;
     $padding-top: 80px;
     width:100px;
     height:200px;
     position:fixed;
     top:-200vh;
     right: ($header-page-margin + $menu-button-width);
-    color:white;
+    color:$mobile-menu-color;
     z-index: 100;
     transition:all 0.5s ease-in-out;
     padding-top: $padding-top;
@@ -19,10 +20,10 @@
             cursor: pointer;
             a{
                 font-size:20px;
-                color:$color-white;
+                color:$mobile-menu-color;
                 transition:color 0.5s ease-in-out;
                 &:hover{
-                    color:$color-light-gray;
+                    color:darken($mobile-menu-color, 10%);
                 }
             }
         }
