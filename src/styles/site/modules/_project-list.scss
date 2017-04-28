@@ -1,8 +1,28 @@
 .project-list{
     display: flex;
-    padding: 0 $header-page-margin;
+    flex-flow: row wrap;
     .project-item{
-        width: 33%;
-    
+        $padding: 14px;
+        $flex-padding: $padding*4/3;//since first and last items don't have padding, average out the padding
+        flex: 0 1 calc(33.333% - #{$flex-padding});
+        display: inline-block;
+        padding: 30px $padding;
+        cursor: pointer;
+        &:nth-child(3n+1){
+            padding-left: 0;
+        }
+        &:nth-child(3n+3){
+            padding-right: 0;
+        }
+    }
+    .project-details{
+        color: $color-medium-gray;
+        font-weight: 300;
+        .detail-item{
+            display: block;
+            &:last-child{
+                color: lighten($color-medium-gray, 15%);
+            }
+        }
     }
 }

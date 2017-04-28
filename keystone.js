@@ -56,8 +56,20 @@ keystone.set('locals', {
 	editable: keystone.content.editable
 });
 
-// Load your project's Routes
+//wysiwyg
+keystone.set('wysiwyg additional buttons', 'forecolor backcolor undo underline | styleselect fontsizeselect table spellchecker removeformat');
+keystone.set('wysiwyg additional plugins', 'paste textcolor table');
+keystone.set('wysiwyg additional options', {
+	paste_as_text: true,
+	valid_elements: "*[*]",
+	browser_spellcheck :true,
+	external_plugins: {
+		uploadimage: '/js/uploadimage/plugin.min.js'
+	}
+});
+keystone.set('wysiwyg cloudinary images', 'true');
 
+// Load your project's Routes
 keystone.set('routes', require('./routes'));
 
 // Setup replacement rules for emails, to automate the handling of differences

@@ -5,8 +5,15 @@
 			<span class="tab" *ngFor="let projectType of projectTypes">{{projectType.name}}</span>
 		</div>
 		<div class="project-list">
-			<div class="project-item">
-
+			<div class="project-item" *ngFor="let project of projects">
+				<div class="project-thumbnail" *ngIf="project.thumbnailImage">
+					<img src="{{project.thumbnailImage?.url}}" />
+				</div>
+				<div class="project-details">
+					<span class="detail-item">{{project.title}}</span>
+					<span class="detail-item">{{project.location}}</span>
+					<span class="detail-item">{{project.type.name}}</span>
+				</div>
 			</div>
 		</div>
 	</section>

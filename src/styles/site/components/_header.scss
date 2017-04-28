@@ -5,11 +5,12 @@ header{
     height:$header-height;
     width:100%;
     z-index: 100;
+    background-color: $color-white;
     $menu-color: $color-medium-gray;
     .logo{
         position: absolute;
         left: $header-page-margin;
-        top:($header-height - $menu-button-height)/(2) - 10px;
+        top:($header-height - $menu-button-height)/(2) + 10px;
         color: $menu-color;
         h1{
             font-size: px-to-rem(32px);
@@ -23,7 +24,7 @@ header{
         .menu{
             height:$menu-button-height;
             position:absolute;
-            top:($header-height - $menu-button-height)/(2);
+            top:($header-height - $menu-button-height)/(2) + 10px;
             right: $header-page-margin;
             width:$menu-button-width;
             //border-radius:8px;

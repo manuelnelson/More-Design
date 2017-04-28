@@ -1,6 +1,9 @@
 .page-wrapper{
     &.dark-background{
         $menu-color: $color-white;
+        header{
+            background-color: transparent;
+        }
         .logo{
             display: none;
         }

@@ -3,15 +3,16 @@ import { CommonModule }   from '@angular/common';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { RestService } from './services/rest.service';
+import { Safe } from './pipes/safeHtml.pipes';
 import { AppRoutingModule }  from './app.routing';
 
 import {
-    HomeComponent, CarouselComponent, AppComponent, NavigationComponent,ProjectComponent
+    HomeComponent, CarouselComponent, AppComponent, NavigationComponent,ProjectComponent, AboutComponent
 } from './components/';
 
 @NgModule({
     bootstrap: [ AppComponent ],
-    declarations: [ HomeComponent, CarouselComponent, AppComponent, NavigationComponent, ProjectComponent],
+    declarations: [ HomeComponent, CarouselComponent, AppComponent, NavigationComponent, ProjectComponent, AboutComponent, Safe],
     imports: [
         BrowserModule,
         HttpModule,

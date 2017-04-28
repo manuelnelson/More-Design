@@ -1,17 +1,3 @@
-.home{
-    .main-content{
-        display: flex;
-        height: $carousel-height;
-    }
-    $carouselRatio: .666666;
-    .carousel{
-        width: 100% * $carouselRatio;
-    }
-    .additional-tile{
-        background-color: orange;
-        color: white;
-        width: 100% * (1 - $carouselRatio);
-        padding: px-to-rem(30px);
-        font-size: px-to-rem(20px);
-    }
+.project-page{
+    
 }
