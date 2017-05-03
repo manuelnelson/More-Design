@@ -7,12 +7,12 @@ import { Safe } from './pipes/safeHtml.pipes';
 import { AppRoutingModule }  from './app.routing';
 
 import {
-    HomeComponent, CarouselComponent, AppComponent, NavigationComponent,ProjectComponent, AboutComponent
+    HomeComponent, CarouselComponent, AppComponent, NavigationComponent,ProjectComponent, AboutComponent, ContactComponent, ImageCarouselComponent
 } from './components/';
 
 @NgModule({
     bootstrap: [ AppComponent ],
-    declarations: [ HomeComponent, CarouselComponent, AppComponent, NavigationComponent, ProjectComponent, AboutComponent, Safe],
+    declarations: [ HomeComponent, CarouselComponent, AppComponent, NavigationComponent, ProjectComponent, AboutComponent, Safe, ContactComponent, ImageCarouselComponent],
     imports: [
         BrowserModule,
         HttpModule,

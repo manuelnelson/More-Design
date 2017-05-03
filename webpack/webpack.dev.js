@@ -11,7 +11,8 @@ module.exports = function(env) {
             historyApiFallback: true,
             proxy: {
               "/api": "http://localhost:3000" // proxy all api calls to proper dev port
-            }
+          },
+          //publicPath: '/public'
         },
         devtool: 'source-map'
     })

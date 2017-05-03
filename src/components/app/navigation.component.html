@@ -1,7 +1,11 @@
 <header>
 	<nav>
 		<div class="logo">
-			<h1>More Design.</h1>
+			
+			<a [routerLink]="['/']" >
+				<img *ngIf="isDark" src="/public/images/logo-white.svg" />
+				<img *ngIf="!isDark" src="/public/images/logo-gray.svg" />
+			</a>
 		</div>
 		<div class="menu" (click)="toggleMenu()">
 			<span class="menu-button" [ngClass]="{'close':showMenu}"></span>

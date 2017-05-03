@@ -10,4 +10,5 @@ export interface Project{
     type: {
         name:string;
     };
+    hide: Boolean;
 }

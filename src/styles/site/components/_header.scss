@@ -12,6 +12,7 @@ header{
         left: $header-page-margin;
         top:($header-height - $menu-button-height)/(2) + 10px;
         color: $menu-color;
+        max-width: 200px;
         h1{
             font-size: px-to-rem(32px);
             font-weight: bold;

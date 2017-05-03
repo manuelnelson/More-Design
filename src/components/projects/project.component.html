@@ -1,11 +1,11 @@
 <div class="landing-page projects-page">
 	<section class="project-section">
 		<div class="project-tab-section">
-			<span class="tab">All</span>
-			<span class="tab" *ngFor="let projectType of projectTypes">{{projectType.name}}</span>
+			<span class="tab" (click)="filterByType()">All</span>
+			<span class="tab" *ngFor="let projectType of projectTypes" (click)="filterByType(projectType)">{{projectType.name}}</span>
 		</div>
 		<div class="project-list">
-			<div class="project-item" *ngFor="let project of projects">
+			<div class="project-item" *ngFor="let project of projects" [ngClass]="{'hidden':project.hide}">
 				<div class="project-thumbnail" *ngIf="project.thumbnailImage">
 					<img src="{{project.thumbnailImage?.url}}" />
 				</div>

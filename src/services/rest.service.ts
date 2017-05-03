@@ -6,7 +6,7 @@ import {
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import {Home,Project, ProjectType, About} from '../models';
+import {Home,Project, ProjectType, About, Contact} from '../models';
 
 @Injectable()
 export class RestService {
@@ -52,6 +52,17 @@ export class RestService {
                     const json = response.json();
                     if (response.ok) {
                         return json.data as About;
+                    } else {
+                        return this.logError(json.data);
+                    }
+                });
+    }
+    getContact() : Observable<Contact> {
+        return this.http.get('/api/contacts')
+                .map((response) => {
+                    const json = response.json();
+                    if (response.ok) {
+                        return json.data as Contact;
                     } else {
                         return this.logError(json.data);
                     }

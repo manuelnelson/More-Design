@@ -22,8 +22,9 @@ var storage = new keystone.Storage({
 });
 Home.add({
 	name: { type: String, required: true },
-	carousel: { type: Types.Relationship, ref: 'Slide', many: true},
-	backgroundImage: { type: Types.File, storage:storage }
+	backgroundImage1: { type: Types.File, storage:storage },
+	backgroundImage2: { type: Types.File, storage:storage },
+	backgroundImage3: { type: Types.File, storage:storage }
 });
 
 Home.defaultColumns = 'name';

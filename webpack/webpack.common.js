@@ -3,6 +3,7 @@ const rootDir = path.resolve(__dirname, '..');
 const HtmlWebpack = require('html-webpack-plugin');
 const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 const loaders = [
   {
     loader: 'css-loader',
@@ -23,7 +24,7 @@ module.exports = {
     },
     module: {
         loaders: [
-            { loader: 'raw-loader', test: /\.(css|html)$/ },
+            { loader: 'raw-loader', test: /\.(css|html|jpg|svg)$/ },
             {
                test: /\.scss$/,
                exclude: /node_modules/,
@@ -46,7 +47,8 @@ module.exports = {
            inject: 'body',
            template: path.resolve(rootDir, 'src', 'index.html')
        }),
-       new ExtractTextPlugin("site.css")
+       new ExtractTextPlugin("site.css"),
+       new CopyWebpackPlugin([ { from: 'src/public', to: 'public' } ])
    ],
    resolve: {
        extensions: [ '.js', '.ts','.scss' ]

@@ -1,0 +1,13 @@
+.contact-page{
+    .social-section{
+        font-size: px-to-rem(36px);
+        margin-top: 40px;
+        .icon{
+            margin-right: 30px;
+            color: $color-medium-gray;
+            &:hover{
+                color: darken($color-medium-gray, 10%);
+            }
+        }
+    }
+}

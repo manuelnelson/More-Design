@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'nav-menu',
@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
 })
 export class NavigationComponent {
     showMenu: boolean = false;
+    @Input() isDark: boolean;
     constructor() {
     }
     toggleMenu(){

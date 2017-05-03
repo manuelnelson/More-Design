@@ -1,8 +1,9 @@
 <div class="home">
 	<section class="hero">
-		<img src="{{home?.carousel[0].image.url}}"  />
+		<image-carousel *ngIf="carousel" [images]="carousel"></image-carousel>
 		<div class="hero-content">
-			<h1>{{home?.name}}</h1>
+			<!-- <h1>{{home?.name}}</h1> -->
+			<img src="/public/images/logo-white.svg" />
 		</div>
 	</section>
 </div>

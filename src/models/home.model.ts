@@ -1,4 +1,10 @@
-export interface About{
+import {Image} from './image.model';
+export interface Home{
     name: string;
-    content: string;
+    backgroundImage1: Image;
+    backgroundImage2: Image;
+    backgroundImage3: Image;
+    logo:{
+        url:string;
+    }
 }
