@@ -78,7 +78,7 @@ export class CarouselComponent implements OnInit{
             if(this.autoSlide){
                 this.startInterval();
             }
-            },1000);            
+            },1000);
     }
 
 }

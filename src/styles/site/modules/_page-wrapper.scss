@@ -1,11 +1,16 @@
 .page-wrapper{
+    &.has-logo{
+        .logo{
+            display: block;
+        }
+    }
+    .logo{
+        display: none;
+    }
     &.dark-background{
         $menu-color: $color-white;
         header{
             background-color: transparent;
-        }
-        .logo{
-            display: none;
         }
         nav{
             .menu-button{

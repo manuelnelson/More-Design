@@ -76,4 +76,10 @@
             transform: rotate(180deg);
         }
     }
+    .slide-status{
+        position: absolute;
+        bottom: $header-page-margin;
+        left: $header-page-margin;
+        font-size: px-to-rem(22px);
+    }
 }
