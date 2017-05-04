@@ -9,7 +9,7 @@ export class AppComponent{
     constructor(private router: Router) {
         this.router.events.subscribe(event => {
         if (event instanceof RoutesRecognized) {
-            if(event.url == '/')
+            if(event.url == '/' || event.url.indexOf('/projects/') > -1)
             {
                 this.isDark = true;
             }else{

@@ -1,6 +1,8 @@
+
 import {Slide} from './slide.model'
 export interface Project{
     title: string;
+    slug: string;
     images: Array<Slide>;
     thumbnailImage: {
         url:string;

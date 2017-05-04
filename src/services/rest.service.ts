@@ -34,6 +34,17 @@ export class RestService {
                     }
                 });
     }
+    getProject(projectId: number) : Observable<Project> {
+        return this.http.get('/api/projects/' + projectId)
+                .map((response) => {
+                    const json = response.json();
+                    if (response.ok) {
+                        return json.data as Project;
+                    } else {
+                        return this.logError(json.data);
+                    }
+                });
+    }
     getProjectTypes() : Observable<Array<ProjectType>> {
         return this.http.get('/api/projectTypes')
                 .map((response) => {

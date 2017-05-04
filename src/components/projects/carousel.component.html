@@ -1,8 +1,4 @@
-    <a *ngFor="let slide of slides" class="slide" [ngClass]="{'active':slide.active, 'left':slide.left,'right':slide.right,'prev':slide.prev,'next':slide.next}" href="{{slide.link}}" [style.background-image]="'url(' + slide.image.url + ')'">
-        <div class="caption-area">
-            <span class="subtitle">{{slide.subTitle}}</span>
-            <span class="title">{{slide.title}}</span>
-        </div>
-    </a>
-    <div class="btn-carousel next" (click)="next()"><span>></span></div>
-    <div class="btn-carousel previous" (click)="previous()"><span><</span></div>
+<div *ngFor="let slide of slides" class="slide" [ngClass]="{'active':slide.active, 'left':slide.left,'right':slide.right,'prev':slide.prev,'next':slide.next}" [style.background-image]="'url(' + slide.image.url + ')'">
+</div>
+<div class="btn-carousel next icon-arrow-right2" (click)="next()"></div>
+<div class="btn-carousel previous icon-arrow-right2" (click)="previous()"></div>

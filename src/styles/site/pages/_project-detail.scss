@@ -1,0 +1,14 @@
+.project-detail{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    .project-content{
+        position: absolute;
+        top: 20vh;
+        left: $header-page-margin;
+        width: calc(100% - #{$header-page-margin} * 2);
+    }
+    .project-title{
+        font-size: px-to-rem(46px);
+    }
+}

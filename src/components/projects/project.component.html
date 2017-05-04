@@ -5,7 +5,7 @@
 			<span class="tab" *ngFor="let projectType of projectTypes" (click)="filterByType(projectType)">{{projectType.name}}</span>
 		</div>
 		<div class="project-list">
-			<div class="project-item" *ngFor="let project of projects" [ngClass]="{'hidden':project.hide}">
+			<div class="project-item" [routerLink]="['/projects',project.slug]" *ngFor="let project of projects" [ngClass]="{'hidden':project.hide}">
 				<div class="project-thumbnail" *ngIf="project.thumbnailImage">
 					<img src="{{project.thumbnailImage?.url}}" />
 				</div>

@@ -40,7 +40,8 @@ exports = module.exports = function(app) {
 	// keystone.redirect('/home', '/index.html');
 
 	app.get('/api/homes', routes.api.homes);
-	app.get('/api/projects', routes.api.projects);
+	app.get('/api/projects', routes.api.projects.list);
+	app.get('/api/projects/:slug', routes.api.projects.get);
 	app.get('/api/projectTypes', routes.api.projectTypes);
 	app.get('/api/abouts', routes.api.abouts);
 	app.get('/api/contacts', routes.api.contacts);

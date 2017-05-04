@@ -12,7 +12,7 @@ export class CarouselComponent implements OnInit{
     animationInterval: number = 1000;
     slideInterval: number = 5000;
     slideTimer: number = 0;
-    autoSlide: boolean = true;
+    autoSlide: boolean = false;
     intervalRunning: boolean = false;
     constructor() {
     }
@@ -69,16 +69,16 @@ export class CarouselComponent implements OnInit{
                 this.slides[this.currentSlideNdx].left = true;
             },5)
         }
-        this.currentTimeout = window.setTimeout(()=>{
-            this.slides[this.currentSlideNdx].active = false;
-            if(goForward)
-                this.slides[this.currentSlideNdx].right = false;
-            else
-                this.slides[this.currentSlideNdx].left = false;
-            // if(!this.intervalRunning)
-            //this.clearInterval();
-            this.startInterval();
-        },1000);
+            this.currentTimeout = window.setTimeout(()=>{
+                this.slides[this.currentSlideNdx].active = false;
+                if(goForward)
+                    this.slides[this.currentSlideNdx].right = false;
+                else
+                    this.slides[this.currentSlideNdx].left = false;
+            if(this.autoSlide){
+                this.startInterval();
+            }
+            },1000);            
     }
 
 }

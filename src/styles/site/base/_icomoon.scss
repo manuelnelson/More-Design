@@ -22,7 +22,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.icon-arrow-right2:before {
+  content: "\ea3c";
+}
 .icon-facebook:before {
   content: "\ea90";
 }
