@@ -1,1 +1,1 @@
-<img class="background-image" *ngFor="let img of images" src="/files/{{img.filename}}" [ngClass]="{'visible': img.visible}"/>
+<img class="background-image" *ngFor="let img of images" src="{{img.url}}" [ngClass]="{'visible': img.visible}"/>
