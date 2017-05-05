@@ -1,0 +1,20 @@
+<div class="landing-page projects-page">
+	<section class="project-section">
+		<div class="project-tab-section">
+			<span class="tab" (click)="filterByType()">All</span>
+			<span class="tab" *ngFor="let postCategory of postCategories" (click)="filterByType(postCategory)">{{postCategory.name}}</span>
+		</div>
+		<div class="project-list">
+			<div class="project-item" [routerLink]="['/blog/post',post.slug]" *ngFor="let post of posts" [ngClass]="{'hidden':post.hide}">
+				<div class="project-thumbnail" *ngIf="post.image">
+					<img src="{{post.image?.url}}" />
+				</div>
+				<div class="project-details">
+					<span class="detail-item">{{post.title}}</span>
+					<!-- <span class="detail-item">{{project.location}}</span> -->
+					<span class="detail-item" *ngFor="let category of categories">{{category.name}}</span>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>

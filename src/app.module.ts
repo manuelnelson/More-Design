@@ -8,13 +8,13 @@ import { AppRoutingModule }  from './app.routing';
 
 import {
     HomeComponent, CarouselComponent, AppComponent, NavigationComponent,ProjectComponent,
-    AboutComponent, ContactComponent, ImageCarouselComponent, ProjectDetailComponent
+    AboutComponent, ContactComponent, ImageCarouselComponent, ProjectDetailComponent, BlogComponent, PostComponent
 } from './components/';
 
 @NgModule({
     bootstrap: [ AppComponent ],
     declarations: [ HomeComponent, CarouselComponent, AppComponent, NavigationComponent, ProjectComponent,
-        AboutComponent, Safe, ContactComponent, ImageCarouselComponent, ProjectDetailComponent],
+        AboutComponent, Safe, ContactComponent, ImageCarouselComponent, ProjectDetailComponent, PostComponent, BlogComponent],
     imports: [
         BrowserModule,
         HttpModule,

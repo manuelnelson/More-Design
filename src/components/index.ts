@@ -7,3 +7,5 @@ export * from './projects/detail.component';
 export * from './about/about.component';
 export * from './contact/contact.component';
 export * from './home/img-carousel.component';
+export * from './blog/blog.component';
+export * from './blog/post.component';

@@ -5,3 +5,5 @@ export * from './projectType.model';
 export * from './about.model';
 export * from './contact.model';
 export * from './image.model';
+export * from './postCategory.model';
+export * from './post.model';

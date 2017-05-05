@@ -2,7 +2,7 @@ import { NgModule }                from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // Components
-import { HomeComponent, ProjectComponent, AboutComponent, ContactComponent, ProjectDetailComponent } from './components/';
+import { HomeComponent, ProjectComponent, AboutComponent, ContactComponent, ProjectDetailComponent, BlogComponent } from './components/';
 
 const routes: Routes = [
     // Root
@@ -11,8 +11,9 @@ const routes: Routes = [
     { path: '',  component: HomeComponent},
     { path: 'projects',  component: ProjectComponent},
     { path: 'about',  component: AboutComponent},
+    { path: 'blog',  component: BlogComponent},
+    { path: 'projects/:slug',  component: ProjectDetailComponent},
     { path: 'contact',  component: ContactComponent},
-    { path: 'projects/:slug',  component: ProjectDetailComponent}
     //{ path: '', redirectTo:'/home', pathMatch: 'full'}
 ];
 

@@ -45,6 +45,9 @@ exports = module.exports = function(app) {
 	app.get('/api/projectTypes', routes.api.projectTypes);
 	app.get('/api/abouts', routes.api.abouts);
 	app.get('/api/contacts', routes.api.contacts);
+	app.get('/api/posts', routes.api.posts.list);
+	app.get('/api/posts/:slug', routes.api.posts.get);
+	app.get('/api/postCategories', routes.api.postCategories);
 
 	app.get('*', (req,res) => res.sendFile(path.join(__dirname+'/../dist/index.html')));
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:

@@ -78,8 +78,21 @@
     }
     .slide-status{
         position: absolute;
-        bottom: $header-page-margin;
+        bottom: $header-page-margin / 2;
         left: $header-page-margin;
         font-size: px-to-rem(22px);
+    }
+    .social-section{
+        position: absolute;
+        bottom: ($header-page-margin / 2); 
+        right: $header-page-margin;
+        font-size: px-to-rem(22px);
+        a{
+            color: $color-white;
+            margin-left: 8x;
+            &:hover{
+                color: darken($color-white,15%);
+            }
+        }
     }
 }

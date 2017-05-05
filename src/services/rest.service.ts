@@ -6,7 +6,7 @@ import {
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import {Home,Project, ProjectType, About, Contact} from '../models';
+import {Home,Project, ProjectType, About, Contact, Post, PostCategory} from '../models';
 
 @Injectable()
 export class RestService {
@@ -51,6 +51,28 @@ export class RestService {
                     const json = response.json();
                     if (response.ok) {
                         return json.data as Array<ProjectType>;
+                    } else {
+                        return this.logError(json.data);
+                    }
+                });
+    }
+    getPosts() : Observable<Array<Post>> {
+        return this.http.get('/api/posts')
+                .map((response) => {
+                    const json = response.json();
+                    if (response.ok) {
+                        return json.data as Array<Post>;
+                    } else {
+                        return this.logError(json.data);
+                    }
+                });
+    }
+    getPostCategories() : Observable<Array<PostCategory>> {
+        return this.http.get('/api/postCategories')
+                .map((response) => {
+                    const json = response.json();
+                    if (response.ok) {
+                        return json.data as Array<PostCategory>;
                     } else {
                         return this.logError(json.data);
                     }
