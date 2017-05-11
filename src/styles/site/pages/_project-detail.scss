@@ -11,4 +11,10 @@
     .project-title{
         font-size: px-to-rem(46px);
     }
+    @include bp-max($bp-tablet){
+        .project-content{
+            left: $header-page-margin-tablet;
+            width: calc(100% - #{$header-page-margin-tablet} * 2);                    
+        }
+    };
 }

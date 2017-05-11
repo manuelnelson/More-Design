@@ -28,4 +28,7 @@
             }
         }
     }
+    @include bp-max($bp-between){
+        right: calc(#{$header-page-margin-tablet} + #{$menu-button-width});
+    };
 }

@@ -76,5 +76,15 @@ header{
 
     }
     @include bp-max($bp-between){
+        .logo{
+            left: $header-page-margin-tablet;
+            width: 45%;
+            top: 33px;                     
+        }
+        nav{
+            .menu{
+                right: $header-page-margin-tablet;
+            }
+        }
     };
 }

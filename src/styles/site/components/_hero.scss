@@ -31,7 +31,7 @@
     img{
         position: relative;
         left: -50%;
-        max-width: 200%;
+        max-width: 800px;
         width: 200%;
     }
   }
@@ -49,4 +49,13 @@
 
       }
   }
+  @include bp-max(840px){
+      .hero-content{
+          width: 80%;
+          img{
+              width: 100%;
+              left: 0;
+          }
+      }
+  };
 }

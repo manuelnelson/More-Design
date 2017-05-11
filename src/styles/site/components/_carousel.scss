@@ -8,6 +8,7 @@
     }
     .slide{
         background-size: cover;
+        background-position: center;
         display: none;
         height: 100%;
         position: relative;
@@ -84,7 +85,7 @@
     }
     .social-section{
         position: absolute;
-        bottom: ($header-page-margin / 2); 
+        bottom: ($header-page-margin / 2);
         right: $header-page-margin;
         font-size: px-to-rem(22px);
         a{
@@ -95,4 +96,22 @@
             }
         }
     }
+    @include bp-max($bp-tablet){
+        .slide-status{
+            bottom: $header-page-margin-tablet / 2;
+            left: $header-page-margin-tablet;
+        }
+        .social-section{
+            bottom: ($header-page-margin-tablet / 2);
+            right: $header-page-margin-tablet;
+        }
+        .btn-carousel{
+            &.next{
+                right: $header-page-margin-tablet;
+            }
+            &.previous{
+                left: $header-page-margin-tablet;
+            }
+        }
+    };
 }

@@ -1,4 +1,10 @@
 .landing-page{
     margin-top: 40vh;
     padding: 0 $header-page-margin;
+    @include bp-max($bp-tablet){
+        padding: 0 px-to-rem(60px);
+    };
+    @include bp-max($bp-mobile){
+        padding: 0 px-to-rem(40px);
+    };
 }
