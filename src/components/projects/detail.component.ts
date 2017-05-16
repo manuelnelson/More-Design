@@ -9,6 +9,7 @@ export class ProjectDetailComponent implements OnInit {
     project: Project;
     slides: Array<Slide> = new Array<Slide>();
     restApiService: RestService;
+    showDescription: boolean = false;
     constructor(private restService: RestService, private route: ActivatedRoute) {
 
     }
@@ -16,5 +17,8 @@ export class ProjectDetailComponent implements OnInit {
         this.restService.getProject(this.route.snapshot.params.slug).subscribe((project: Project) => {
             this.project = project;
         });
+    }
+    toggleDescription(){
+        this.showDescription = !this.showDescription;
     }
 }

@@ -4,5 +4,11 @@
 	</div>
 	<div class="project-content">
 		<span class="project-title">{{project?.title}}</span>
+		<span class="project-sub-title">{{project?.subTitle}}</span>
+		<div class="description-container" [ngClass]="{'visible': showDescription}">
+			<span class="description-toggle" (click)="toggleDescription()">&#43;</span>
+			<div class="rich-text" [innerHTML]="project?.description" >
+			</div>
+		</div>
 	</div>
 </div>

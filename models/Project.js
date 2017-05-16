@@ -13,7 +13,10 @@ var Project = new keystone.List('Project', {
 
 Project.add({
 	title: { type: String, required: true },
-	date: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
+	subTitle: { type: String },
+	description: { type: Types.Html, wysiwyg: true},
+	// date: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
+	date: { type: Types.Date, index: true },
 	location: { type: String },
 	thumbnailImage: { type: Types.CloudinaryImage },
 	type: { type: Types.Relationship, ref: 'ProjectType'},

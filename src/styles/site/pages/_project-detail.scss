@@ -10,11 +10,65 @@
     }
     .project-title{
         font-size: px-to-rem(46px);
+        display: block;
+    }
+    .project-sub-title{
+        font-size: px-to-rem(26px);
+        display: block;
+    };
+    $animation: 0.4s ease-in-out;
+    $toggle-height: 66px;
+    .description-toggle{
+        font-size: px-to-rem($toggle-height);
+        transition: transform $animation;
+        transform-origin: center;
+        cursor: pointer;
+        display: inline-block;
+        left: px-to-rem(30px);
+        top: px-to-rem(10px);
+        position: relative;
+        line-height: px-to-rem($toggle-height);
+    }
+    .description-container{
+        position: relative;
+        width: 50vw;
+        left: px-to-rem(-30px);
+        height: $toggle-height;
+        .rich-text{
+            visibility: hidden;
+            height: 0;
+            opacity: 0;
+            z-index: -1;
+            transition: height $animation, opacity $animation, visibility $animation;
+            padding: px-to-rem(30px);
+            color: transparent;
+            max-width: 80ch;
+            margin: 0 auto;
+            overflow-y: hidden;
+        }
+        &.visible{
+            background-color: rgba($color-dark-gray,0.9);
+            height: auto;
+            .rich-text{
+                z-index: 1;
+                height: 40vh;
+                opacity: 1;
+                visibility: visible;
+                overflow-y: auto;
+                color: $color-white;
+            }
+            .description-toggle{
+                transform: rotate(225deg);
+            }
+        }
     }
     @include bp-max($bp-tablet){
         .project-content{
             left: $header-page-margin-tablet;
-            width: calc(100% - #{$header-page-margin-tablet} * 2);                    
+            width: calc(100% - #{$header-page-margin-tablet} * 2);
         }
-    };
+        .description-container{
+            width: 85vw;
+        }
+    }
 }

@@ -9,6 +9,7 @@
         max-width: 120ch;
         margin: 0 auto;
         transition: visibility 0s, opacity 0s;
+        overflow: hidden;
         &.show{
             position: relative;
             visibility: visible;
