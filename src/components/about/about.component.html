@@ -1,4 +1,11 @@
 <div class="landing-page about-page">
-	<section class="content-section rich-text" [innerHTML]="about?.content | safeHtml">		
+	<section class="project-section">
+		<div class="project-tab-section">
+			<span class="tab" *ngFor="let about of abouts" [ngClass]="{'active':about?.show}" (click)="filterByType(about.name)">{{about.name}}</span>
+		</div>
+		<div class="text-section-container">
+			<div class="content-section rich-text" [ngClass]="{'show':about?.show}" *ngFor="let about of abouts" [innerHTML]="about?.content | safeHtml">
+			</div>
+		</div>
 	</section>
 </div>

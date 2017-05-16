@@ -1,0 +1,20 @@
+.about-page{
+    .text-section-container{
+        position: relative;
+    }
+    .rich-text{
+        visibility: hidden;
+        opacity: 0;
+        height: 0;
+        max-width: 120ch;
+        margin: 0 auto;
+        transition: visibility 0s, opacity 0s;
+        &.show{
+            position: relative;
+            visibility: visible;
+            opacity: 1;
+            height: auto;
+            transition: visibility 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        }
+    }
+}

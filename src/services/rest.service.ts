@@ -79,12 +79,12 @@ export class RestService {
                 });
     }
 
-    getAbout() : Observable<About> {
+    getAbouts() : Observable<Array<About>> {
         return this.http.get('/api/abouts')
                 .map((response) => {
                     const json = response.json();
                     if (response.ok) {
-                        return json.data as About;
+                        return json.data as Array<About>;
                     } else {
                         return this.logError(json.data);
                     }

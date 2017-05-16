@@ -23,7 +23,7 @@
                 color:$mobile-menu-color;
                 transition:color 0.5s ease-in-out;
                 &:hover{
-                    color:darken($mobile-menu-color, 10%);
+                    color:$color-primary;
                 }
             }
         }

@@ -11,8 +11,9 @@
         margin-left: 24px;
         cursor: pointer;
         transition: color 0.2s ease-in-out;
-        &.active, &:hover{
-            color: darken($color-medium-gray,20%);
+        &.active, &:hover
+        {
+            color: $color-primary;
         }
     }
 }
