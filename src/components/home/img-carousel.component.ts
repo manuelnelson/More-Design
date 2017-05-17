@@ -32,7 +32,7 @@ export class ImageCarouselComponent implements OnInit {
                 this.imageNdx = 0;
                 return;
             }
-        }, 500000);
+        }, 5000);
     }
 
 }
