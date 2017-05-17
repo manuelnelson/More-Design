@@ -1,8 +1,18 @@
-<div class="detail-page project-detail">
+<div class="detail-page post-detail">
 	<div class="carousel">
-		<carousel-component *ngIf="project" [slides]="project?.images"></carousel-component>
+		<carousel-component *ngIf="post" [slides]="post?.images"></carousel-component>
 	</div>
-	<div class="project-content">
-		<span class="project-title">{{project?.title}}</span>
+	<div class="post-left-content">
+		<span class="post-title">{{post?.title}}</span>
+		<span class="post-sub-title">{{post?.author?.name.first}} {{post?.author?.name.last}}</span>
+	</div>
+	<div class="post-right-content">
+		<div class="location-image" [style.background-image]="'url(' + post?.locationImage?.url + ')'">
+		</div>
+		<div class="description-container">
+			<h1 class="post-title">{{post?.title}}</h1>
+			<div class="rich-text" [innerHTML]="post?.content?.extended">
+			</div>
+		</div>
 	</div>
 </div>

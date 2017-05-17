@@ -78,6 +78,17 @@ export class RestService {
                     }
                 });
     }
+    getPost(slug: string) : Observable<Post> {
+        return this.http.get('/api/posts/' + slug)
+                .map((response) => {
+                    const json = response.json();
+                    if (response.ok) {
+                        return json.data as Post;
+                    } else {
+                        return this.logError(json.data);
+                    }
+                });
+    }
 
     getAbouts() : Observable<Array<About>> {
         return this.http.get('/api/abouts')

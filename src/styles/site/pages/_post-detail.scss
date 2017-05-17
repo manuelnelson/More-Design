@@ -1,0 +1,46 @@
+.post-detail{
+    .post-right-content{
+        position: absolute;
+        top: 20vh;
+        right: $header-page-margin;
+        width: calc(50% - #{$header-page-margin} * 2);
+    }
+    .post-left-content{
+        position: absolute;
+        top: 20vh;
+        left: $header-page-margin;
+        width: calc(50% - #{$header-page-margin} * 2);
+    }
+    .post-title{
+        font-size: px-to-rem(40px);
+        display: block;
+    }
+    .post-sub-title{
+        font-size: px-to-rem(22px);
+        display: block;
+    };
+    $location-image-height: 140px;
+    .location-image{
+        width: 100%;
+        height: $location-image-height;
+        background-size: cover;
+        background-position: center;
+    }
+    $container-padding: 25px;
+    .description-container{
+
+        background-color: $color-white;
+        height: calc(75vh - #{$header-height} - #{$location-image-height});
+        padding: px-to-rem($container-padding);
+        .post-title{
+            color: $color-primary;
+        }
+    }
+    .rich-text{
+        color: $color-medium-gray;
+        overflow-y: auto;
+        height: calc(100% - 2*#{$container-padding});
+    }
+    @include bp-max($bp-tablet){
+    }
+}

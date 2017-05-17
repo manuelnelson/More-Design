@@ -1,6 +1,12 @@
 import {PostCategory} from './postCategory.model';
 export interface Post{
     title: string;
+    author: {
+        name: {
+            first: string;
+            last: string;
+        }; 
+    }
     slug: string;
     image: {
         url:string;

@@ -14,7 +14,7 @@ export class AppComponent{
                 this.isDark = true;
                 this.withLogo = false;
             }
-            else if(event.url.indexOf('/projects/') > -1)
+            else if(event.url.indexOf('/projects/') > -1 || event.url.indexOf('/post/') > -1)
             {
                 this.isDark = true;
                 this.withLogo = true;

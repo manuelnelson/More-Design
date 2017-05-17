@@ -11,7 +11,7 @@ function list(req,res){
 }
 function get(req,res,next){
 	if(!req.params.slug){
-		var err = new Error("id parameter required");
+		var err = new Error("slug required");
 		return next(err)
 	}
 	keystone.list('Project').model.findOne({slug: req.params.slug}).populate({

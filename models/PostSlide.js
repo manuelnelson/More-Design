@@ -5,20 +5,20 @@ var keystone = require('keystone'),
 	Types = keystone.Field.Types;
 
 /**
- * ProjectSlide Model
+ * PostSlide Model
  * ==========
  */
 
-var ProjectSlide = new keystone.List('ProjectSlide', {
+var PostSlide = new keystone.List('PostSlide', {
 	map: { name: 'name' },
 	autokey: { path: 'slug', from: 'name', unique: true }
 });
 
-ProjectSlide.add({
+PostSlide.add({
 	name: { type: String, required: true },
 	image: { type: Types.CloudinaryImage },
 });
 
 
-ProjectSlide.defaultColumns = 'name';
-ProjectSlide.register();
+PostSlide.defaultColumns = 'name';
+PostSlide.register();

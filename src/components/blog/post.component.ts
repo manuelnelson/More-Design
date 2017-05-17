@@ -12,8 +12,8 @@ export class PostComponent implements OnInit {
 
     }
     ngOnInit() {
-        // this.restService.getProject(this.route.snapshot.params.slug).subscribe((project: Project) => {
-        //     this.project = project;
-        // });
+        this.restService.getPost(this.route.snapshot.params.slug).subscribe((post: Post) => {
+            this.post = post;
+        });
     }
 }

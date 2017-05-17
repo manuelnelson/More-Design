@@ -69,24 +69,25 @@
                 color: $color5;
             }
         }
+        $button-space: 10px;
         &.next{
-            right: $header-page-margin;
+            right: $header-page-margin - $buttonSize - $button-space;
         }
         &.previous{
-            left: $header-page-margin;
+            left: $header-page-margin - $buttonSize - $button-space;
             transform: rotate(180deg);
             top: calc(50% - 30px);
         }
     }
     .slide-status{
         position: absolute;
-        bottom: $header-page-margin / 2;
+        bottom: $header-page-margin / 3;
         left: $header-page-margin;
         font-size: px-to-rem(22px);
     }
     .social-section{
         position: absolute;
-        bottom: ($header-page-margin / 2);
+        bottom: ($header-page-margin / 3);
         right: $header-page-margin;
         font-size: px-to-rem(22px);
         a{

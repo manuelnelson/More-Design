@@ -4,18 +4,18 @@
 keystone = require('keystone');
 function list(req,res){
 	keystone.list('Post').model.find().populate({
-		path: 'categories'
+		path: 'categories author'
 	}).exec(function(err,result){
 		return res.json({success:true,data:result});
 	})
 }
 function get(req,res,next){
 	if(!req.params.slug){
-		var err = new Error("id parameter required");
+		var err = new Error("slug required");
 		return next(err)
 	}
 	keystone.list('Post').model.findOne({slug: req.params.slug}).populate({
-		path: 'categories'
+		path: 'categories author images'
 	}).exec(function(err,result){
 		return res.json({success:true,data:result});
 	})

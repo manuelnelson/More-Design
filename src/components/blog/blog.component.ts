@@ -15,6 +15,7 @@ export class BlogComponent implements OnInit {
     ngOnInit() {
         this.restService.getPosts().subscribe((posts: Array<Post>) => {
             this.posts = posts;
+            console.log(this.posts[0])
             //this.allProjects = posts;
         });
         this.restService.getPostCategories().subscribe((postCategories: Array<PostCategory>) => {
