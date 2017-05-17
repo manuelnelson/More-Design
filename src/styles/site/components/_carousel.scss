@@ -1,4 +1,5 @@
 .carousel{
+    $button-space: 10px;
     carousel-component{
         overflow: hidden;
         width: 100%;
@@ -69,7 +70,6 @@
                 color: $color5;
             }
         }
-        $button-space: 10px;
         &.next{
             right: $header-page-margin - $buttonSize - $button-space;
         }
@@ -109,10 +109,10 @@
         }
         .btn-carousel{
             &.next{
-                right: $header-page-margin-tablet;
+                right: calc(#{$header-page-margin-tablet} - #{$buttonSize} - #{$button-space});
             }
             &.previous{
-                left: $header-page-margin-tablet;
+                left: calc(#{$header-page-margin-tablet} - #{$buttonSize} - #{$button-space});
             }
         }
     };

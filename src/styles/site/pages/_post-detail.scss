@@ -1,15 +1,17 @@
 .post-detail{
+    height: 100vh;
     .post-right-content{
         position: absolute;
-        top: 20vh;
+        top: calc(#{$header-height} + 5vh);
         right: $header-page-margin;
-        width: calc(50% - #{$header-page-margin} * 2);
+        width: calc(50% - #{$header-page-margin} - 10px);
     }
     .post-left-content{
         position: absolute;
-        top: 20vh;
+        top: calc(#{$header-height} + 5vh);
         left: $header-page-margin;
-        width: calc(50% - #{$header-page-margin} * 2);
+        width: calc(50% - #{$header-page-margin} - 10px);
+        max-width: 460px;
     }
     .post-title{
         font-size: px-to-rem(40px);
@@ -28,7 +30,6 @@
     }
     $container-padding: 25px;
     .description-container{
-
         background-color: $color-white;
         height: calc(75vh - #{$header-height} - #{$location-image-height});
         padding: px-to-rem($container-padding);
@@ -40,7 +41,51 @@
         color: $color-medium-gray;
         overflow-y: auto;
         height: calc(100% - 2*#{$container-padding});
+        width: calc(100% + #{$container-padding});
     }
     @include bp-max($bp-tablet){
+        .post-right-content{
+            right: $header-page-margin-tablet;
+            width: calc(60% - #{$header-page-margin-tablet} - 10px);
+        }
+        .post-left-content{
+            left: $header-page-margin-tablet;
+            width: calc(40% - #{$header-page-margin-tablet} - 10px);
+        }
+    }
+    @include bp-max($bp-between){
+        $section-spacing: 30px;
+        .post-left-content{
+            position: relative;
+            width: calc(100% - 2*#{$header-page-margin-tablet});
+            left: $header-page-margin-tablet;
+        }
+        .post-right-content{
+            position: relative;
+            margin-top: px-to-rem($section-spacing);
+            width: calc(100% - 2*#{$header-page-margin-tablet});
+            left: $header-page-margin-tablet;
+            right: auto;
+        }
+        .description-container{
+            height: calc(65vh - #{$header-height} - #{$location-image-height});
+            padding: px-to-rem($container-padding);
+        }
+        .rich-text{
+            height: calc(100% - 2*#{$container-padding});
+            width: calc(100%);
+        }
+
+        .carousel{
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            &:after{
+                clear: both;
+                float: none;
+            }
+        }
     }
 }

@@ -4,7 +4,7 @@
     position: relative;
     .project-content{
         position: absolute;
-        top: 20vh;
+        top: calc(#{$header-height} + 5vh);
         left: $header-page-margin;
         width: calc(100% - #{$header-page-margin} * 2);
     }
