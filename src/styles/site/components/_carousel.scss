@@ -75,6 +75,7 @@
         &.previous{
             left: $header-page-margin;
             transform: rotate(180deg);
+            top: calc(50% - 30px);
         }
     }
     .slide-status{

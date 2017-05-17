@@ -1,1 +1,3 @@
-<img class="background-image" *ngFor="let img of images" src="{{img.url}}" [ngClass]="{'visible': img.visible}"/>
+<div class="carousel-wrapper">
+    <div class="background-image" *ngFor="let img of images" [style.background-image]="'url(' + img.url + ')'" [ngClass]="{'visible': img.visible}"></div>    
+</div>

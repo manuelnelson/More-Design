@@ -1,6 +1,6 @@
 .hero{
-  background-size:cover;
-  background-position: left center;
+  // background-size:cover;
+  // background-position: left center;
   height:100vh;
   overflow: hidden;
   position: relative;
@@ -35,19 +35,29 @@
         width: 200%;
     }
   }
+  .carousel-wrapper{
+      width: 100vw;
+      height: 100vh;
+      display: block;
+      overflow: hidden;
+  }
   .background-image{
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
+      display: block;
+      height: 0;
       visibility: hidden;
+      max-width:inherit;
+      width: initial;
       opacity: 0;
       transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
       &.visible{
           visibility: visible;
           opacity: 1;
-
+          height: 100vh;
+          background-size: cover;
+          background-position: center center;
       }
+  }
+  @include bp-max(1040px){
   }
   @include bp-max(840px){
       .hero-content{
