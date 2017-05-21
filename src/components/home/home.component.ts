@@ -19,6 +19,8 @@ export class HomeComponent implements OnInit {
                 this.carousel.push(this.home.backgroundImage2);
             if(this.home.backgroundImage3 != null)
                 this.carousel.push(this.home.backgroundImage3);
+            if(this.home.backgroundImage4 != null)
+                this.carousel.push(this.home.backgroundImage4);
         });
     }
 

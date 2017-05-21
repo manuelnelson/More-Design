@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { RestService } from '../../services/rest.service';
+import { Settings } from '../../models';
 
 @Component({
     selector: 'nav-menu',
@@ -7,7 +9,12 @@ import { Component, Input } from '@angular/core';
 export class NavigationComponent {
     showMenu: boolean = false;
     @Input() isDark: boolean;
-    constructor() {
+    restApiService: RestService;
+    settings: Settings;
+    constructor(private restService: RestService) {
+        this.restService.getSettings().subscribe((settings: Settings) => {
+            this.settings = settings;
+        });
     }
     toggleMenu(){
         this.showMenu = !this.showMenu;

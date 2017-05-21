@@ -2,9 +2,29 @@
     height: 100vh;
     .post-right-content{
         position: absolute;
-        top: calc(#{$header-height} + 5vh);
+        top: calc(#{$header-height} + 5vh + 30px);
         right: $header-page-margin;
         width: calc(50% - #{$header-page-margin} - 10px);
+        &.visible{
+            .post-container{
+                visibility: visible;
+                height: auto;
+                opacity: 1;
+            }
+            .description-toggle{
+                transform: rotate(225deg);
+            }
+
+        }
+    }
+    $animation: 0.4s ease-in-out;
+    $toggle-height: 66px;
+    .post-container{
+        position: relative;
+        visibility: hidden;
+        height: 0;
+        opacity: 0;
+        transition: height $animation, opacity $animation, visibility $animation;
     }
     .post-left-content{
         position: absolute;
@@ -21,7 +41,18 @@
         font-size: px-to-rem(22px);
         display: block;
     };
-    $location-image-height: 140px;
+    .description-toggle{
+        font-size: px-to-rem($toggle-height);
+        transition: transform $animation;
+        transform-origin: center;
+        cursor: pointer;
+        display: inline-block;
+        right: 0;
+        top: -1 * px-to-rem(50px);
+        position: absolute;
+        line-height: px-to-rem($toggle-height);
+    }
+    $location-image-height: 130px;
     .location-image{
         width: 100%;
         height: $location-image-height;
@@ -30,18 +61,37 @@
     }
     $container-padding: 25px;
     .description-container{
-        background-color: $color-white;
+        background-color: rgba($color-white, 0.9);
         height: calc(75vh - #{$header-height} - #{$location-image-height});
         padding: px-to-rem($container-padding);
+        position: relative;
         .post-title{
             color: $color-primary;
+        }
+    }
+    .post-button{
+        position: absolute;
+        bottom: px-to-rem(20px);
+        background-color: transparent;
+        color: $color-primary;
+        display: inline-block;
+        font-size: px-to-rem(12px);
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: pointer;
+        &.previous{
+            left:px-to-rem($container-padding);
+        }
+        &.next{
+            right:px-to-rem($container-padding);
         }
     }
     .rich-text{
         color: $color-medium-gray;
         overflow-y: auto;
-        height: calc(100% - 2*#{$container-padding});
-        width: calc(100% + #{$container-padding});
+        height: calc(100% - 4*#{$container-padding});
+        //width: calc(100% + #{$container-padding});
+        width: 100%;
     }
     @include bp-max($bp-tablet){
         .post-right-content{
@@ -75,7 +125,10 @@
             height: calc(100% - 2*#{$container-padding});
             width: calc(100%);
         }
-
+        .description-toggle{
+            left: 0;
+            right: auto;
+        }
         .carousel{
             position: absolute;
             width: 100vw;

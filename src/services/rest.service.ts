@@ -6,7 +6,7 @@ import {
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import {Home,Project, ProjectType, About, Contact, Post, PostCategory} from '../models';
+import {Home,Project, ProjectType, About, Contact, Post, PostCategory, Settings} from '../models';
 
 @Injectable()
 export class RestService {
@@ -18,6 +18,17 @@ export class RestService {
                     const json = response.json();
                     if (response.ok) {
                         return json.data as Home;
+                    } else {
+                        return this.logError(json.data);
+                    }
+                });
+    }
+    getSettings() : Observable<Settings> {
+        return this.http.get('/api/settings')
+                .map((response) => {
+                    const json = response.json();
+                    if (response.ok) {
+                        return json.data as Settings;
                     } else {
                         return this.logError(json.data);
                     }
@@ -80,6 +91,28 @@ export class RestService {
     }
     getPost(slug: string) : Observable<Post> {
         return this.http.get('/api/posts/' + slug)
+                .map((response) => {
+                    const json = response.json();
+                    if (response.ok) {
+                        return json.data as Post;
+                    } else {
+                        return this.logError(json.data);
+                    }
+                });
+    }
+    getNextPost(date: string) : Observable<Post> {
+        return this.http.get('/api/posts/' + date + '/next')
+                .map((response) => {
+                    const json = response.json();
+                    if (response.ok) {
+                        return json.data as Post;
+                    } else {
+                        return this.logError(json.data);
+                    }
+                });
+    }
+    getPreviousPost(date: string) : Observable<Post> {
+        return this.http.get('/api/posts/' + date + '/previous')
                 .map((response) => {
                     const json = response.json();
                     if (response.ok) {

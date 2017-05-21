@@ -100,11 +100,11 @@
     }
     @include bp-max($bp-tablet){
         .slide-status{
-            bottom: $header-page-margin-tablet / 2;
+            bottom: $header-page-margin-tablet / 3;
             left: $header-page-margin-tablet;
         }
         .social-section{
-            bottom: ($header-page-margin-tablet / 2);
+            bottom: ($header-page-margin-tablet / 3);
             right: $header-page-margin-tablet;
         }
         .btn-carousel{

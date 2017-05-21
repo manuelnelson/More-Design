@@ -7,13 +7,30 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class PostComponent implements OnInit {
     post: Post;
+    nextPost: Post;
+    previousPost: Post;
     restApiService: RestService;
+    showDescription: boolean = true;
+
     constructor(private restService: RestService, private route: ActivatedRoute) {
 
     }
     ngOnInit() {
-        this.restService.getPost(this.route.snapshot.params.slug).subscribe((post: Post) => {
-            this.post = post;
-        });
+        this.route.params.map(params => params['slug'])
+            .subscribe(slug => {
+                this.restService.getPost(slug).subscribe((post: Post) => {
+                    this.post = post;
+                    this.restService.getNextPost(this.post.date.toLocaleString("YYYY-MM-dd")).subscribe((nextPost: Post) => {
+                        this.nextPost = nextPost;
+                    });
+                    this.restService.getPreviousPost(this.post.date.toLocaleString("YYYY-MM-dd")).subscribe((previousPost: Post) => {
+                        this.previousPost = previousPost;
+                    });
+                });
+            })
     }
+    toggleDescription(){
+        this.showDescription = !this.showDescription;
+    }
+
 }

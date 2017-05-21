@@ -17,7 +17,8 @@ Home.add({
 	name: { type: String, required: true },
 	backgroundImage1: { type: Types.CloudinaryImage },
 	backgroundImage2: { type: Types.CloudinaryImage },
-	backgroundImage3: { type: Types.CloudinaryImage }
+	backgroundImage3: { type: Types.CloudinaryImage },
+	backgroundImage4: { type: Types.CloudinaryImage }
 });
 
 Home.defaultColumns = 'name';

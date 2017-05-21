@@ -4,6 +4,7 @@ export interface Home{
     backgroundImage1: Image;
     backgroundImage2: Image;
     backgroundImage3: Image;
+    backgroundImage4: Image;
     logo:{
         url:string;
     }

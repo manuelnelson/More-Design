@@ -5,19 +5,19 @@ var keystone = require('keystone'),
 	Types = keystone.Field.Types;
 
 /**
- * About Model
+ * Settings Model
  * ==========
  */
 
-var About = new keystone.List('About', {
+var Settings = new keystone.List('Settings', {
 	map: { name: 'name' },
 	autokey: { path: 'slug', from: 'name', unique: true }
 });
-About.add({
+Settings.add({
 	name: { type: String, required: true },
-	content: { type: Types.Html, wysiwyg: true },
-	sort: { type: Number }
+	siteLogoWhite: { type: Types.CloudinaryImage },	
+	siteLogoDark: { type: Types.CloudinaryImage }
 });
 
-About.defaultColumns = 'name';
-About.register();
+Settings.defaultColumns = 'name';
+Settings.register();

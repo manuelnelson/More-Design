@@ -7,3 +7,4 @@ export * from './contact.model';
 export * from './image.model';
 export * from './postCategory.model';
 export * from './post.model';
+export * from './settings.model';

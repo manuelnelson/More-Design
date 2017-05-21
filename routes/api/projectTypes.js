@@ -4,7 +4,7 @@
 	keystone = require('keystone'),
 
 exports = module.exports = function(req, res) {
-	keystone.list('ProjectType').model.find().exec(function(err,result){
+	keystone.list('ProjectType').model.find().sort('sort').exec(function(err,result){
 		return res.json({success:true,data:result});
 	})
 };

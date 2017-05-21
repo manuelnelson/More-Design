@@ -11,6 +11,7 @@ var ProjectType = new keystone.List('ProjectType', {
 
 ProjectType.add({
 	name: { type: String, required: true },
+	sort: { type: Number }
 });
 
 ProjectType.relationship({ ref: 'Project', path: 'projects', refPath: 'type' });
