@@ -20,6 +20,7 @@ export class PostComponent implements OnInit {
             .subscribe(slug => {
                 this.restService.getPost(slug).subscribe((post: Post) => {
                     this.post = post;
+                    this.post.images = post.images;
                     this.restService.getNextPost(this.post.date.toLocaleString("YYYY-MM-dd")).subscribe((nextPost: Post) => {
                         this.nextPost = nextPost;
                     });

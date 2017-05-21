@@ -22,6 +22,10 @@ export class CarouselComponent implements OnInit{
             this.startInterval();
         }
     }
+    ngOnChanges(){
+        console.log('change!')
+        this.ngOnInit();
+    }
     startInterval(){
         this.slideTimer = window.setInterval(()=>{
             this.next(true);
