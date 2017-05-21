@@ -2,8 +2,8 @@
 	<nav>
 		<div class="logo">
 			<a [routerLink]="['/']" >
-				<img *ngIf="isDark" src="{{settings?.siteLogoWhite.url}}" />
-				<img *ngIf="!isDark" src="{{settings?.siteLogoDark.url}}" />
+				<img *ngIf="isDark" src="{{settings?.siteLogoWhite.secure_url}}" />
+				<img *ngIf="!isDark" src="{{settings?.siteLogoDark.secure_url}}" />
 			</a>
 		</div>
 		<div class="menu" (click)="toggleMenu()">

@@ -1,4 +1,4 @@
-<div *ngFor="let slide of slides; let i = index" class="slide" [ngClass]="{'active':slide.active, 'left':slide.left,'right':slide.right,'prev':slide.prev,'next':slide.next}" [style.background-image]="'url(' + slide.image.url + ')'">
+<div *ngFor="let slide of slides; let i = index" class="slide" [ngClass]="{'active':slide.active, 'left':slide.left,'right':slide.right,'prev':slide.prev,'next':slide.next}" [style.background-image]="'url(' + slide.image.secure_url + ')'">
 </div>
 <div class="btn-carousel next icon-arrow-right2" (click)="next()"></div>
 <div class="btn-carousel previous icon-arrow-right2" (click)="previous()"></div>

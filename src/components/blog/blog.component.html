@@ -7,7 +7,7 @@
 		<div class="project-list">
 			<div class="project-item" [routerLink]="['/blog/post',post.slug]" *ngFor="let post of posts" [ngClass]="{'hidden':post.hide}">
 				<div class="project-thumbnail" *ngIf="post.thumbnailImage">
-					<img src="{{post.thumbnailImage?.url}}" />
+					<img src="{{post.thumbnailImage?.secure_url}}" />
 				</div>
 				<div class="project-details">
 					<span class="detail-item">{{post.title}}</span>
