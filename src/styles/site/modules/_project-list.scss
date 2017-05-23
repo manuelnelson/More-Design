@@ -11,6 +11,13 @@
         visibility: visible;
         opacity: 1;
         transition: all 0.3s ease-in-out;
+        .project-thumbnail{
+            background-size: cover;
+            width: 100%;
+            height: 250px;
+            background-position: center;
+            margin-bottom: 6px;
+        }
         &:nth-child(3n+1){
             padding-left: 0;
         }

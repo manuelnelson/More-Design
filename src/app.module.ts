@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RestService } from './services/rest.service';
 import { Safe } from './pipes/safeHtml.pipes';
 import { AppRoutingModule }  from './app.routing';
+import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 
 import {
     HomeComponent, CarouselComponent, AppComponent, NavigationComponent,ProjectComponent,
@@ -20,7 +21,13 @@ import {
         HttpModule,
         AppRoutingModule
     ],
-    providers: [ RestService ]
+    providers: [
+        RestService,
+        {
+            provide: HAMMER_GESTURE_CONFIG,
+            useClass: HammerGestureConfig
+        }
+    ]
 })
 export class AppModule{
 }

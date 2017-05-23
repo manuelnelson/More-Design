@@ -6,6 +6,7 @@ import { Slide } from '../../models';
 })
 export class CarouselComponent implements OnInit{
     @Input() slides: Array<Slide>;
+    //SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
     nextSlideNdx: number = 0;
     currentSlideNdx: number = 0;
     currentTimeout: number = 0;
@@ -14,6 +15,7 @@ export class CarouselComponent implements OnInit{
     slideTimer: number = 0;
     autoSlide: boolean = false;
     intervalRunning: boolean = false;
+    isTransitioning: boolean = false;
     constructor() {
     }
     ngOnInit(){
@@ -23,7 +25,6 @@ export class CarouselComponent implements OnInit{
         }
     }
     ngOnChanges(){
-        console.log('change!')
         this.ngOnInit();
     }
     startInterval(){
@@ -37,7 +38,8 @@ export class CarouselComponent implements OnInit{
         this.intervalRunning = false;
     }
     next(ignoreClear: boolean){
-        // if(!ignoreClear)
+        if(this.isTransitioning)
+            return;
         this.clearInterval();
         this.currentSlideNdx = this.nextSlideNdx;
         if(this.nextSlideNdx == this.slides.length -1)
@@ -47,6 +49,8 @@ export class CarouselComponent implements OnInit{
         this.transition(true);
     }
     previous(){
+        if(this.isTransitioning)
+            return;
         this.clearInterval();
         this.currentSlideNdx = this.nextSlideNdx;
         if(this.nextSlideNdx == 0)
@@ -57,6 +61,7 @@ export class CarouselComponent implements OnInit{
     }
 
     transition(goForward: boolean){
+        this.isTransitioning = true;
         if(goForward){
             this.slides[this.nextSlideNdx].left = true;
             this.slides[this.nextSlideNdx].active = true;
@@ -79,6 +84,7 @@ export class CarouselComponent implements OnInit{
                     this.slides[this.currentSlideNdx].right = false;
                 else
                     this.slides[this.currentSlideNdx].left = false;
+            this.isTransitioning = false;
             if(this.autoSlide){
                 this.startInterval();
             }
