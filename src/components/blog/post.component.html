@@ -1,4 +1,7 @@
 <div class="detail-page post-detail">
+	<div class="carousel">
+		<carousel-component *ngIf="post?.images.length >0" [slides]="post?.images"></carousel-component>
+	</div>
 	<div class="post-left-content">
 		<span class="post-title">{{post?.title}}</span>
 		<span class="post-sub-title">{{post?.author?.name.first}} {{post?.author?.name.last}}</span>
@@ -17,7 +20,4 @@
 			</div>
 		</div>
 	</div>
-</div>
-<div class="carousel">
-	<carousel-component *ngIf="post?.images.length >0" [slides]="post?.images"></carousel-component>
 </div>

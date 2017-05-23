@@ -1,4 +1,7 @@
 <div class="detail-page project-detail">
+	<div class="carousel">
+		<carousel-component *ngIf="project" [slides]="project?.images"></carousel-component>
+	</div>
 	<div class="project-content">
 		<span class="project-title">{{project?.title}}</span>
 		<span class="project-sub-title">{{project?.subTitle}}</span>
@@ -8,7 +11,4 @@
 			</div>
 		</div>
 	</div>
-</div>
-<div class="carousel">
-	<carousel-component *ngIf="project" [slides]="project?.images"></carousel-component>
 </div>
