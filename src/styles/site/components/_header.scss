@@ -27,7 +27,8 @@ header{
             position:absolute;
             top:($header-height - $menu-button-height)/(2) + 10px;
             right: $header-page-margin;
-            width:$menu-button-width;
+            //width:$menu-button-width;
+            width: $line-width;
             //border-radius:8px;
             cursor: pointer;
             transition: height $tranistion-duration ease-in-out, width $tranistion-duration ease-in-out;
@@ -79,7 +80,7 @@ header{
         .logo{
             left: $header-page-margin-tablet;
             width: 45%;
-            top: 33px;                     
+            top: 33px;
         }
         nav{
             .menu{
