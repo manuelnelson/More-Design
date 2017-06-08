@@ -9,7 +9,7 @@
         width: calc(100% - #{$header-page-margin} * 2);
     }
     .project-title{
-        font-size: px-to-rem(46px);
+        font-size: px-to-rem(36px);
         display: block;
     }
     .project-sub-title{
@@ -17,7 +17,7 @@
         display: block;
     };
     $animation: 0.4s ease-in-out;
-    $toggle-height: 66px;
+    $toggle-height: 50px;
     .description-toggle{
         font-size: px-to-rem($toggle-height);
         transition: transform $animation;

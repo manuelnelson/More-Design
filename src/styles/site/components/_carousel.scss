@@ -1,5 +1,5 @@
 .carousel{
-    $button-space: 10px;
+    $button-space: 0px;
     carousel-component{
         overflow: hidden;
         width: 100%;
@@ -71,10 +71,10 @@
             }
         }
         &.next{
-            right: $header-page-margin - $buttonSize - $button-space;
+            right: $header-page-margin;// - $buttonSize - $button-space;
         }
         &.previous{
-            left: $header-page-margin - $buttonSize - $button-space;
+            left: $header-page-margin;// - $buttonSize - $button-space;
             transform: rotate(180deg);
             top: calc(50% - 30px);
         }
@@ -109,10 +109,10 @@
         }
         .btn-carousel{
             &.next{
-                right: calc(#{$header-page-margin-tablet} - #{$buttonSize} - #{$button-space});
+                right: calc(#{$header-page-margin-tablet});// - #{$buttonSize} - #{$button-space});
             }
             &.previous{
-                left: calc(#{$header-page-margin-tablet} - #{$buttonSize} - #{$button-space});
+                left: calc(#{$header-page-margin-tablet});// - #{$buttonSize} - #{$button-space});
             }
         }
     };

@@ -1,4 +1,5 @@
 import { Component, NgZone, Input, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 import { Slide } from '../../models';
 @Component({
     selector: 'carousel-component',
@@ -7,6 +8,7 @@ import { Slide } from '../../models';
 export class CarouselComponent implements OnInit{
     @Input() slides: Array<Slide>;
     //SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
+    currentUrl: string;
     nextSlideNdx: number = 0;
     currentSlideNdx: number = 0;
     currentTimeout: number = 0;
@@ -16,13 +18,15 @@ export class CarouselComponent implements OnInit{
     autoSlide: boolean = false;
     intervalRunning: boolean = false;
     isTransitioning: boolean = false;
-    constructor() {
+    constructor(private route: ActivatedRoute) {
     }
     ngOnInit(){
         this.slides[0].active = true;
         if(this.autoSlide){
             this.startInterval();
         }
+        this.currentUrl = window.location.href;
+
     }
     ngOnChanges(){
         this.ngOnInit();

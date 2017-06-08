@@ -18,7 +18,8 @@ Contact.add({
 	content: { type: Types.Html, wysiwyg: true },
 	instagramUrl: { type: String },
 	facebookUrl: { type: String },
-	pinterestUrl: { type: String }	
+	pinterestUrl: { type: String },
+	houzzUrl: { type:String}	
 });
 
 Contact.defaultColumns = 'name';
