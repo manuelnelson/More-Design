@@ -16,30 +16,38 @@ export class ProjectDetailComponent implements OnInit{
     }
     ngOnInit() {
       this.project = this.route.snapshot.data['project'];
+      let siteTag = " | More Design";
       this.meta.addTag({
-        name: "title",
-        content: this.project.title
+        property: "og:url",
+        name: "url",
+        content: window.location.href
       })
+      if(this.project.title.length > 0){
+        this.meta.addTag({
+          name: "title",
+          content: this.project.title + siteTag
+        })
+        this.meta.addTag({
+          property: "og:title",
+          name: "title",
+          content: this.project.title + siteTag
+        })
+      }
+      if(this.project.metaDescription.length > 0){
+        this.meta.addTag({
+          name: "description",
+          content: this.project.metaDescription
+        })
+        this.meta.addTag({
+          name: "og:description",
+          content: this.project.metaDescription
+        })
+      }
       this.meta.addTag({
-        name: "description",
-        content: this.project.metaDescription
-      })
-      this.meta.addTag({
-        name: "og:title",
-        content: this.project.title
-      })
-      this.meta.addTag({
-        name: "og:description",
-        content: this.project.metaDescription
-      })
-      this.meta.addTag({
-        name: "og:image",
+        property: "og:image",
+        name: "image",
         content: this.project.thumbnailImage.url
       })
-
-        // this.restService.getProject(this.route.snapshot.params.slug).subscribe((project: Project) => {
-        //     this.project = project;
-        // });
     }
     toggleDescription(){
         this.showDescription = !this.showDescription;
