@@ -27,7 +27,7 @@ export class ProjectDetailComponent implements OnInit{
         content: "More Design"
       })
 
-      if(this.project.title.length > 0){
+      if(this.project.title){
         this.meta.addTag({
           name: "title",
           content: this.project.title + siteTag
@@ -38,7 +38,7 @@ export class ProjectDetailComponent implements OnInit{
           content: this.project.title + siteTag
         })
       }
-      if(this.project.metaDescription.length > 0){
+      if(this.project.metaDescription){
         this.meta.addTag({
           name: "description",
           content: this.project.metaDescription
