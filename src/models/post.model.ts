@@ -13,4 +13,10 @@ export interface Post{
     date: Date;
     categories: Array<PostCategory>;
     hide: Boolean;
+    metaTitle: string;
+    metaDescription: string;
+    metaKeywords: string;
+    ogImage: {
+        url:string;
+    };
 }

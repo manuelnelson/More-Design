@@ -13,4 +13,11 @@ export interface Project{
         name:string;
     };
     hide: Boolean;
+    metaTitle: string;
+    metaDescription: string;
+    metaKeywords: string;
+    ogImage: {
+        url:string;
+    };
+
 }
