@@ -86,5 +86,34 @@ keystone.set('nav', {
 });
 
 // Start Keystone to connect to your database and initialise the web server
-
 keystone.start();
+
+if(process.env.NODE_ENV.indexOf('generate') > -1){
+	var sitemap = require('express-sitemap')
+	//we only care about projects and blogs
+	keystone.list('Project').model.find().exec(function(err,results){
+		let map = {}
+		let routes = {}
+		results.map(x=>{
+			map['/projects/' + x.slug] = ['get']
+			routes['/projects/' + x.slug] = {
+				'changefreq': 'monthly'
+			}
+		})
+		keystone.list('Post').model.find().exec(function(err,posts){
+				posts.map(x=>{
+					map['/blog/post/' + x.slug] = ['get']
+					routes['/blog/post/' + x.slug] = {
+						'changefreq': 'monthly'
+					}
+				})
+				sitemap({
+					http: "https",
+					url: "more-design.herokuapp.com",
+					map: map,
+					route: routes
+				}).XMLtoFile()
+		})
+	})
+
+}
