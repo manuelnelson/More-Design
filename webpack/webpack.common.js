@@ -20,7 +20,8 @@ module.exports = {
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(rootDir, 'dist'),
-        sourceMapFilename: '[name].map'
+        sourceMapFilename: '[name].map',
+        publicPath: "/"
     },
     module: {
         loaders: [
