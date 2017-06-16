@@ -35,6 +35,10 @@ export class ProjectDetailComponent implements OnInit{
             name: "title",
             content: this.project.title + siteTag
           })
+          this.meta.addTag({
+            name: "twitter:title",
+            content: this.project.title
+          })
         }
         if(this.project.metaDescription){
           this.meta.addTag({
@@ -49,6 +53,24 @@ export class ProjectDetailComponent implements OnInit{
         this.meta.addTag({
           property: "og:image",
           name: "image",
+          content: this.project.thumbnailImage.url
+        })
+        this.meta.addTag({
+          property: "og:image",
+          name: "image",
+          content: this.project.thumbnailImage.url
+        })
+        this.meta.addTag({
+          property: "og:image",
+          name: "image",
+          content: this.project.thumbnailImage.url
+        })
+        this.meta.addTag({
+          name: "twitter:card",
+          content: "summary"
+        })
+        this.meta.addTag({
+          name: "twitter:image",
           content: this.project.thumbnailImage.url
         })
     }
