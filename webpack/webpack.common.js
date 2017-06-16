@@ -24,7 +24,7 @@ module.exports = {
     },
     module: {
         loaders: [
-            { loader: 'raw-loader', test: /\.(css|html|jpg|svg)$/ },
+            { loader: 'raw-loader', test: /\.(css|html|jpg|svg|xml)$/ },
             {
                test: /\.scss$/,
                exclude: /node_modules/,

@@ -51,7 +51,10 @@ exports = module.exports = function(app) {
 	app.get('/api/settings', routes.api.settings);
 	app.get('/api/posts/:date/:direction', routes.api.posts.get);
 
-	app.get('*', (req,res) => res.sendFile(path.join(__dirname+'/../dist/index.html')));
+	app.get('*', (req,res) => {
+		console.log('whatt');
+		res.sendFile(path.join(__dirname+'/../dist/index.html'))
+	});
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
 
