@@ -88,7 +88,7 @@ keystone.set('nav', {
 // Start Keystone to connect to your database and initialise the web server
 keystone.start();
 
-if(process.env.NODE_ENV.indexOf('generate') > -1){
+if(process.env.NODE_ENV && process.env.NODE_ENV.indexOf('generate') > -1){
 	var sitemap = require('express-sitemap')
 	//we only care about projects and blogs
 	keystone.list('Project').model.find().exec(function(err,results){
