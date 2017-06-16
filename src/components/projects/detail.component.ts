@@ -22,6 +22,11 @@ export class ProjectDetailComponent implements OnInit{
         name: "url",
         content: window.location.href
       })
+      this.meta.addTag({
+        property: "og:site_name",
+        content: "More Design"
+      })
+
       if(this.project.title.length > 0){
         this.meta.addTag({
           name: "title",
