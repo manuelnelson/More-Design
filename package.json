@@ -79,7 +79,7 @@
     "lint": "tslint ./src/**/*.ts",
     "test": "karma start ./karma/karma.conf.js",
     "test:headless": "karma start ./karma/karma.conf.js --browsers PhantomJS",
-    "combine": "parallelshell \"npm run build:dev\" \"node keystone.js\"",
+    "combine": "parallelshell \"npm run build:dev\" \"node app.js\"",
     "build:dev": "webpack-dev-server --env=dev --config ./webpack/webpack.dev.js",
     "build:prod": "webpack --env=prod --config ./webpack/webpack.prod.js",
     "build:sitemap": "set NODE_ENV=generate-sitemap && node keystone.js",
