@@ -75,7 +75,7 @@
     "webpack-merge": "^3.0.0"
   },
   "scripts": {
-    "start": "node keystone.js",
+    "start": "node app.js",
     "lint": "tslint ./src/**/*.ts",
     "test": "karma start ./karma/karma.conf.js",
     "test:headless": "karma start ./karma/karma.conf.js --browsers PhantomJS",
