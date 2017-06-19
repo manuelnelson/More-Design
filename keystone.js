@@ -88,7 +88,6 @@ keystone.set('nav', {
 
 // Start Keystone to connect to your database and initialise the web server
 keystone.start();
-keystone.app.use(require('prerender-node').set('prerenderToken', 'b8IvyBzWRpX1olB2BlBx'));
 
 if(process.env.NODE_ENV && process.env.NODE_ENV.indexOf('generate') > -1){
 	var sitemap = require('express-sitemap')

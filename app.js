@@ -22,7 +22,6 @@ keystone.init({
 	'brand': 'More Design',
 
 	'sass': 'public',
-	'static': ['public','dist'],
 	'favicon': 'public/favicon.png',
 	'views': 'templates/views',
 
@@ -55,6 +54,10 @@ keystone.set('wysiwyg additional options', {
 	}
 });
 keystone.set('wysiwyg cloudinary images', 'true');
+
+app.use(serve('./public'));
+app.use(serve('./dist'));
+app.use(require('prerender-node').set('prerenderToken', 'b8IvyBzWRpX1olB2BlBx'));
 
 // Load your project's Routes
 keystone.set('routes', require('./routes')(app));
