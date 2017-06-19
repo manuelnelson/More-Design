@@ -17,7 +17,7 @@ import {
     declarations: [ HomeComponent, CarouselComponent, AppComponent, NavigationComponent, ProjectComponent,
         AboutComponent, Safe, ContactComponent, ImageCarouselComponent, ProjectDetailComponent, PostComponent, BlogComponent],
     imports: [
-        BrowserModule,
+        BrowserModule.withServerTransition({appId:'more-design'}),
         HttpModule,
         AppRoutingModule
     ],
