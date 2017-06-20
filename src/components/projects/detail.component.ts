@@ -73,7 +73,7 @@ export class ProjectDetailComponent implements OnInit{
           name: "twitter:image",
           content: this.project.thumbnailImage.url
         })
-        window.prerenderReady = true;
+        //window.prerenderReady = true;
     }
     ngOnInit() {
     }
