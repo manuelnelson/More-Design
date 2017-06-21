@@ -7,6 +7,7 @@ import { Router, RoutesRecognized } from '@angular/router';
 export class AppComponent{
     isDark: boolean = false;
     withLogo: boolean = true;
+    isMenuOpen: boolean = false;
     constructor(private router: Router) {
         this.router.events.subscribe(event => {
         if (event instanceof RoutesRecognized) {
@@ -23,6 +24,10 @@ export class AppComponent{
                 this.withLogo = true;
             }
         }
-    });
-    }
+    })
+  }
+  openMenu(menuOpenEvent: boolean){
+    console.log('test')
+    this.isMenuOpen = menuOpenEvent;
+  }
 }

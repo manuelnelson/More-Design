@@ -1,3 +1,5 @@
+import 'core-js/es6';
+import 'weakmap';
 import 'es6-shim';
 import 'reflect-metadata';
 import 'zone.js/dist/zone';

@@ -1,4 +1,4 @@
-<div [ngClass]="{'dark-background':isDark,'has-logo':withLogo}" class="page-wrapper">
-    <nav-menu [isDark]="isDark"></nav-menu>
+<div [ngClass]="{'dark-background':isDark,'has-logo':withLogo, 'menu-open': isMenuOpen}" class="page-wrapper">
+    <nav-menu (menuOpen)="openMenu($event)" [isDark]="isDark"></nav-menu>
     <router-outlet></router-outlet>
 </div>

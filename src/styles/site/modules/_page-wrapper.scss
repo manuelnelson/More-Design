@@ -7,6 +7,16 @@
     .logo{
         display: none;
     }
+    &.menu-open{
+      @include bp-max($bp-mobile){
+        .project-detail, .post-left-content{
+          .project-title, .post-title{
+            visibility: hidden;
+            opacity: 0;
+          }
+        }
+      }
+    }
     &.dark-background{
         $menu-color: $color-white;
         header{

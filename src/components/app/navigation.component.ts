@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { RestService } from '../../services/rest.service';
 import { Settings } from '../../models';
 
@@ -9,6 +9,7 @@ import { Settings } from '../../models';
 export class NavigationComponent {
     showMenu: boolean = false;
     @Input() isDark: boolean;
+    @Output() menuOpen =  new EventEmitter<boolean>();
     restApiService: RestService;
     settings: Settings;
     constructor(private restService: RestService) {
@@ -18,5 +19,6 @@ export class NavigationComponent {
     }
     toggleMenu(){
         this.showMenu = !this.showMenu;
+        this.menuOpen.emit(this.showMenu);
     }
 }
