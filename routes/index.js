@@ -51,7 +51,6 @@ exports = module.exports = function(app) {
 	app.get('/api/settings', routes.api.settings);
 	app.get('/api/posts/:date/:direction', routes.api.posts.get);
 
-	// app.use(require('prerender-node').set('prerenderToken', 'b8IvyBzWRpX1olB2BlBx'));
 
 	app.get('*', (req,res) => {
 		// var userAgent = req.headers['user-agent'];

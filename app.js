@@ -57,7 +57,9 @@ keystone.set('wysiwyg cloudinary images', 'true');
 
 app.use(serve('./public'));
 app.use(serve('./dist'));
-app.use(require('prerender-node').set('prerenderToken', 'b8IvyBzWRpX1olB2BlBx'));
+//app.use(require('prerender-node').set('prerenderToken', 'b8IvyBzWRpX1olB2BlBx'));
+app.use(require('prerendercloud'));
+
 app.set('port', process.env.PORT || 3010);
 // Load your project's Routes
 keystone.set('routes', require('./routes')(app));
