@@ -87,5 +87,5 @@
     "prestart": "npm run build:prod",
     "dev": "webpack-dev-server --config ./webpack/webpack.dev.js"
   },
-  "main": "keystone.js"
+  "main": "app.js"
 }
