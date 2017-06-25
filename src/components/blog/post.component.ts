@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { RestService } from '../../services/rest.service';
+import { RestService, MetaBuilderService } from '../../services';
 import { Post } from '../../models';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Meta } from '@angular/platform-browser';
 @Component({
     template: require('./post.component.html')
 })
@@ -12,23 +13,18 @@ export class PostComponent implements OnInit {
     restApiService: RestService;
     showDescription: boolean = true;
 
-    constructor(private restService: RestService, private route: ActivatedRoute) {
-
+    constructor(private restService: RestService, private route: ActivatedRoute, private meta: Meta, private metaBuilder: MetaBuilderService) {
+      this.post = this.route.snapshot.data['blogPost'];
+      this.meta = this.metaBuilder.BuildMeta(this.meta, this.post)
     }
     ngOnInit() {
-        this.route.params.map(params => params['slug'])
-            .subscribe(slug => {
-                this.restService.getPost(slug).subscribe((post: Post) => {
-                    this.post = post;
-                    this.post.images = post.images;
-                    this.restService.getNextPost(this.post.date.toLocaleString("YYYY-MM-dd")).subscribe((nextPost: Post) => {
-                        this.nextPost = nextPost;
-                    });
-                    this.restService.getPreviousPost(this.post.date.toLocaleString("YYYY-MM-dd")).subscribe((previousPost: Post) => {
-                        this.previousPost = previousPost;
-                    });
-                });
-            })
+        this.post.images = this.post.images;
+        this.restService.getNextPost(this.post.date.toLocaleString("YYYY-MM-dd")).subscribe((nextPost: Post) => {
+            this.nextPost = nextPost;
+        });
+        this.restService.getPreviousPost(this.post.date.toLocaleString("YYYY-MM-dd")).subscribe((previousPost: Post) => {
+            this.previousPost = previousPost;
+        });
     }
     toggleDescription(){
         this.showDescription = !this.showDescription;

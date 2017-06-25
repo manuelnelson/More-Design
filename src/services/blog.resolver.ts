@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Router, Resolve, ActivatedRouteSnapshot } from '@angular/router';
 import { RestService } from '../services/rest.service';
-import { Project } from '../models';
+import { Post } from '../models';
 @Injectable()
-export class ProjectResolver implements Resolve<Project> {
+export class BlogResolver implements Resolve<Post> {
     constructor(private restService: RestService, private router: Router) {}
 
-    resolve(route: ActivatedRouteSnapshot): Promise<Project> {
-      return this.restService.getProject(route.params.slug).map(project => project).toPromise();
+    resolve(route: ActivatedRouteSnapshot): Promise<Post> {
+      return this.restService.getPost(route.params.slug).map(post => post).toPromise();
     }
 }

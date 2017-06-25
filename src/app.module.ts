@@ -2,7 +2,7 @@ import { NgModule, OnInit } from '@angular/core';
 import { CommonModule }   from '@angular/common';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { RestService, ProjectResolver } from './services';
+import { RestService, ProjectResolver, BlogResolver, MetaBuilderService } from './services';
 import { Safe } from './pipes/safeHtml.pipes';
 import { AppRoutingModule }  from './app.routing';
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
@@ -24,6 +24,8 @@ import {
     providers: [
         RestService,
         ProjectResolver,
+        BlogResolver,
+        MetaBuilderService,
         {
             provide: HAMMER_GESTURE_CONFIG,
             useClass: HammerGestureConfig
