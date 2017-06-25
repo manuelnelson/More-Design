@@ -7,7 +7,6 @@ var express = require('express'),
     favicon = require('serve-favicon'),
     body = require('body-parser'),
     cookieParser = require('cookie-parser'),
-    prerendercloud = require('prerendercloud'),
     multer = require('multer')
 
 var cookieSecret = 'lasdfjoijqw3r8uadsflkj'
@@ -56,12 +55,9 @@ keystone.set('wysiwyg additional options', {
 })
 keystone.set('wysiwyg cloudinary images', 'true')
 
-app.use(serve('./public'))
-app.use(serve('./dist'))
-//app.use(require('prerender-node').set('prerenderToken', 'b8IvyBzWRpX1olB2BlBx'))
+// app.use(serve('./public'))
+// app.use(serve('./dist'))
 
-prerendercloud.set('botsOnly', true)
-app.use(prerendercloud)
 
 app.set('port', process.env.PORT || 3010)
 // Load your project's Routes

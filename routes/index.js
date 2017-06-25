@@ -21,6 +21,7 @@
 var keystone = require('keystone'),
 	middleware = require('./middleware'),
 	importRoutes = keystone.importer(__dirname),
+	prerendercloud = require('prerendercloud'),
 	path = require('path');
 
 // Common Middleware
@@ -36,6 +37,10 @@ module.exports = () => {
 	};
 
 	return (app) => {
+
+		prerendercloud.set('botsOnly', true)
+		app.use(prerendercloud)
+
 		// Setup Route Bindings
 		app.get('/api/homes', routes.api.homes);
 		app.get('/api/projects', routes.api.projects.list);
