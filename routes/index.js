@@ -27,44 +27,36 @@ var keystone = require('keystone'),
 keystone.pre('routes', middleware.initLocals);
 keystone.pre('render', middleware.flashMessages);
 
-// Import Route Controllers
-var routes = {
-	views: importRoutes('./views'),
-	api: importRoutes('./api')
-};
 
-// Setup Route Bindings
-exports = module.exports = function(app) {
+module.exports = () => {
+	// Import Route Controllers
+	var routes = {
+		views: importRoutes('./views'),
+		api: importRoutes('./api')
+	};
 
-	// Views
-	// keystone.redirect('/home', '/index.html');
-
-	app.get('/api/homes', routes.api.homes);
-	app.get('/api/projects', routes.api.projects.list);
-	app.get('/api/projects/:slug', routes.api.projects.get);
-	app.get('/api/projectTypes', routes.api.projectTypes);
-	app.get('/api/abouts', routes.api.abouts);
-	app.get('/api/contacts', routes.api.contacts);
-	app.get('/api/posts', routes.api.posts.list);
-	app.get('/api/posts/:slug', routes.api.posts.get);
-	app.get('/api/postCategories', routes.api.postCategories);
-	app.get('/api/settings', routes.api.settings);
-	app.get('/api/posts/:date/:direction', routes.api.posts.get);
+	return (app) => {
+		// Setup Route Bindings
+		app.get('/api/homes', routes.api.homes);
+		app.get('/api/projects', routes.api.projects.list);
+		app.get('/api/projects/:slug', routes.api.projects.get);
+		app.get('/api/projectTypes', routes.api.projectTypes);
+		app.get('/api/abouts', routes.api.abouts);
+		app.get('/api/contacts', routes.api.contacts);
+		app.get('/api/posts', routes.api.posts.list);
+		app.get('/api/posts/:slug', routes.api.posts.get);
+		app.get('/api/postCategories', routes.api.postCategories);
+		app.get('/api/settings', routes.api.settings);
+		app.get('/api/posts/:date/:direction', routes.api.posts.get);
 
 
-	app.get('*', (req,res) => {
-		// var userAgent = req.headers['user-agent'];
-		// var socialBots = ['facebookexternalhit/1.1','Google (+https://developers.google.com/+/web/snippet/)', 'Twitterbot', 'Pinterest']
-		// for(var i = 0; i<socialBots.length; i++){
-		// 	if(userAgent.startsWith(socialBots[i]))
-		// 	{
-		// 		//send cached page
-		// 		return;
-		// 	}
-		// }
-		res.sendFile(path.join(__dirname+'/../dist/index.html'))
-	});
-	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
-	// app.get('/protected', middleware.requireUser, routes.views.protected);
+		app.get(/((?!keystone).)*/, (req,res) => {
+			var indexPath = path.join(__dirname+'/../dist/index.html')
+			console.log(indexPath);
+			res.sendFile(indexPath)
+		});
 
+		// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
+		// app.get('/protected', middleware.requireUser, routes.views.protected);
+	}
 };

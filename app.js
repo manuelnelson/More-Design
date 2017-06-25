@@ -1,4 +1,4 @@
-require('dotenv').load();
+require('dotenv').load()
 
 var express = require('express'),
     app = express(),
@@ -7,16 +7,16 @@ var express = require('express'),
     favicon = require('serve-favicon'),
     body = require('body-parser'),
     cookieParser = require('cookie-parser'),
-    prerendercloud = require('prerendercloud');
-    multer = require('multer');
+    prerendercloud = require('prerendercloud'),
+    multer = require('multer')
 
-var cookieSecret = 'lasdfjoijqw3r8uadsflkj';
+var cookieSecret = 'lasdfjoijqw3r8uadsflkj'
 
 
-app.use(cookieParser(cookieSecret));
-app.use(body.urlencoded({ extended: true }));
-app.use(body.json());
-app.use(multer());
+app.use(cookieParser(cookieSecret))
+app.use(body.urlencoded({ extended: true }))
+app.use(body.json())
+app.use(multer())
 
 keystone.init({
 	'name': 'More Design',
@@ -27,25 +27,25 @@ keystone.init({
 	'views': 'templates/views',
 
 	'emails': 'templates/emails',
-
+  'static': ['public', 'dist'],
 	'auto update': true,
 	'auth': true,
 	'user model': 'User',
-	'cookie secret': 'I8J8PQCTi(X7_k~*[O:(P*4;^c(TB*n4Cx0#u,4D/FwJgVN7Ja>|1~FrWD+y/<@,'
-});
+	'cookie secret': 'I8J8PQCTi(X7_k~*[O:(P*4^c(TB*n4Cx0#u,4D/FwJgVN7Ja>|1~FrWD+y/<@,'
+})
 
 // Let keystone know where your models are defined. Here we have it at the `/models`
-keystone.import('models');
+keystone.import('models')
 keystone.set('locals', {
 	_: require('underscore'),
 	env: keystone.get('env'),
 	utils: keystone.utils,
 	editable: keystone.content.editable
-});
-keystone.set('session store','mongo');
+})
+keystone.set('session store','mongo')
 
-keystone.set('wysiwyg additional buttons', 'forecolor backcolor undo underline | styleselect fontsizeselect table spellchecker removeformat');
-keystone.set('wysiwyg additional plugins', 'paste textcolor table');
+keystone.set('wysiwyg additional buttons', 'forecolor backcolor undo underline | styleselect fontsizeselect table spellchecker removeformat')
+keystone.set('wysiwyg additional plugins', 'paste textcolor table')
 keystone.set('wysiwyg additional options', {
 	paste_as_text: true,
 	valid_elements: "*[*]",
@@ -53,19 +53,19 @@ keystone.set('wysiwyg additional options', {
 	external_plugins: {
 		uploadimage: '/js/uploadimage/plugin.min.js'
 	}
-});
-keystone.set('wysiwyg cloudinary images', 'true');
+})
+keystone.set('wysiwyg cloudinary images', 'true')
 
-app.use(serve('./public'));
-app.use(serve('./dist'));
-//app.use(require('prerender-node').set('prerenderToken', 'b8IvyBzWRpX1olB2BlBx'));
+app.use(serve('./public'))
+app.use(serve('./dist'))
+//app.use(require('prerender-node').set('prerenderToken', 'b8IvyBzWRpX1olB2BlBx'))
 
-prerendercloud.set('botsOnly', true);  
-app.use(prerendercloud);
+prerendercloud.set('botsOnly', true)
+app.use(prerendercloud)
 
-app.set('port', process.env.PORT || 3010);
+app.set('port', process.env.PORT || 3010)
 // Load your project's Routes
-keystone.set('routes', require('./routes')(app));
+keystone.set('routes', require('./routes')())
 
-keystone.app = app;
-keystone.start();
+//keystone.app = app
+keystone.start()
