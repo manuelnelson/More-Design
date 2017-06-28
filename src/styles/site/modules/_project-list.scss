@@ -6,8 +6,6 @@
     .project-item{
         box-sizing: border-box;
         $padding: 14px;
-        $flex-padding: $padding*4/3;//since first and last items don't have padding, average out the padding
-        //flex: 0 1 calc(33.333% - #{$flex-padding});
         flex: 0 1 calc(33.333%);
         display: inline-block;
         padding: 30px $padding;
@@ -49,28 +47,26 @@
     @include bp-max($bp-tablet){
         .project-item{
             $padding: 14px;
-            $flex-padding: $padding;
-            flex: 0 1 calc(50% - #{$flex-padding});
+            //$flex-padding: $padding;
+            flex: 0 1 calc(50%);
             padding: 30px $padding;
 
-            &:nth-child(3n+1){
-                padding-left: $padding;
-            }
-            &:nth-child(3n+3){
-                padding-right: $padding;
-            }
-            &:nth-child(odd){
-                padding-left: 0;
-            }
-            &:nth-child(even){
-                padding-right: 0;
-            }
+            // &:nth-child(3n+1){
+            //     padding-left: $padding;
+            // }
+            // &:nth-child(3n+3){
+            //     padding-right: $padding;
+            // }
+            // &:nth-child(odd){
+            //     padding-left: 0;
+            // }
+            // &:nth-child(even){
+            //     padding-right: 0;
+            // }
         }
     };
     @include bp-max($bp-mobile){
         .project-item{
-            $padding: 14px;
-            $flex-padding: $padding;
             flex: 0 1 100%;
             padding: 30px 0!important;
         }
