@@ -1,8 +1,12 @@
 .landing-page{
-    margin-top: 40vh;
+    margin-top: 34vh;
     padding: 0 $header-page-margin;
+    transition: margin-top 0.3s ease-in-out;
     @include bp-max($bp-tablet){
         padding: 0 px-to-rem(60px);
+    };
+    @include bp-max($bp-between){
+        margin-top: 24vh;
     };
     @include bp-max($bp-mobile){
         padding: 0 px-to-rem(40px);

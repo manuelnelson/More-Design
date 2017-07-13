@@ -8,6 +8,11 @@
         display: none;
     }
     &.menu-open{
+        @include bp-max($bp-tablet){
+            .landing-page{
+                margin-top: 50vh;
+            }
+        };
       @include bp-max($bp-mobile){
         .project-detail, .post-left-content{
           .project-title, .post-title{
