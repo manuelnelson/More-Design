@@ -26,6 +26,7 @@
         $menu-color: $color-white;
         header{
             background-color: transparent;
+            position: fixed;
         }
         nav{
             .menu-button{
