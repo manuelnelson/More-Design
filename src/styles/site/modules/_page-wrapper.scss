@@ -9,11 +9,6 @@
     }
     &.menu-open{
       @include bp-max($bp-mobile){
-          header{
-              nav{
-                  z-index: 101;
-              }
-          }
         .project-detail, .post-left-content{
           .project-title, .post-title{
             visibility: hidden;
@@ -27,9 +22,6 @@
         header{
             background-color: transparent;
         }
-        .logo{
-            transition: visibility 0.3s ease-in-out;
-        }
         nav{
             .menu-button{
                 background-color: $menu-color;
@@ -38,22 +30,13 @@
                 }
                 &.close{
                     &:before,&:after{
-                        background-color: $color-medium-gray;
+                        background-color: $menu-color;
                     }
                 }
             }
         }
-        &.menu-open{
-            .logo{
-                visibility: hidden;
-            }
-        }
         .mobile-menu{
             color: $menu-color;
-            &.show{
-                margin-top: -80px;
-                padding-top: 160px;
-            }
             ul{
                 li{
                     a{
