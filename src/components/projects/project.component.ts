@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { RestService } from '../../services/rest.service';
 import { Project, ProjectType } from '../../models';
 import { Router } from '@angular/router';
+import { RestService, MetaBuilderService } from '../../services';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
     template: require('./project.component.html')
@@ -12,7 +13,11 @@ export class ProjectComponent implements OnInit {
     projectTypes: Array<ProjectType>;
     restApiService: RestService;
     allTab: boolean = true;
-    constructor(private restService: RestService, private router: Router) {
+    constructor(private restService: RestService, private router: Router,private meta: Meta, private metaBuilder: MetaBuilderService) {
+        this.meta = this.metaBuilder.BuildMeta(this.meta, {
+            title: 'Projects', 
+            metaDescription: 'MORE design build is a niche, go to company for design and construction.'
+        })        
     }
     ngOnInit() {
 

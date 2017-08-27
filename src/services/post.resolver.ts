@@ -3,7 +3,7 @@ import { Router, Resolve, ActivatedRouteSnapshot } from '@angular/router';
 import { RestService } from '../services/rest.service';
 import { Post } from '../models';
 @Injectable()
-export class BlogResolver implements Resolve<Post> {
+export class PostResolver implements Resolve<Post> {
     constructor(private restService: RestService, private router: Router) {}
 
     resolve(route: ActivatedRouteSnapshot): Promise<Post> {

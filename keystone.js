@@ -110,7 +110,7 @@ if(process.env.NODE_ENV && process.env.NODE_ENV.indexOf('generate') > -1){
 				})
 				sitemap({
 					http: "https",
-					url: "more-design.herokuapp.com",
+					url: "moredesignbuild.com",
 					map: map,
 					route: routes
 				}).XMLtoFile()

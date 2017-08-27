@@ -32,6 +32,12 @@ export class MetaBuilderService {
           content: item.title
         })
       }
+      let keywords = item.keywords ? item.keywords : 'MORE design build, architecture, interior design, dallas, texas, modern, classic';
+      meta.addTag({
+        name: "keywords",
+        content: keywords
+      });
+      
       if(item.metaDescription){
         meta.addTag({
           name: "description",
@@ -42,28 +48,30 @@ export class MetaBuilderService {
           content: item.metaDescription
         })
       }
-      meta.addTag({
-        property: "og:image",
-        name: "image",
-        content: item.thumbnailImage.url
-      })
-      meta.addTag({
-        property: "og:image",
-        name: "image",
-        content: item.thumbnailImage.url
-      })
-      meta.addTag({
-        property: "og:image",
-        name: "image",
-        content: item.thumbnailImage.url
-      })
+      if(item.thumbnailImage && item.thumbnailImage.url){
+        meta.addTag({
+          property: "og:image",
+          name: "image",
+          content: item.thumbnailImage.url
+        })
+        meta.addTag({
+          property: "og:image",
+          name: "image",
+          content: item.thumbnailImage.url
+        })
+        meta.addTag({
+          property: "og:image",
+          name: "image",
+          content: item.thumbnailImage.url
+        })  
+        meta.addTag({
+          name: "twitter:image",
+          content: item.thumbnailImage.url
+        })
+      }
       meta.addTag({
         name: "twitter:card",
         content: "summary"
-      })
-      meta.addTag({
-        name: "twitter:image",
-        content: item.thumbnailImage.url
       })
       return meta;
     }

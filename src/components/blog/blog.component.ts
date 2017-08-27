@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RestService } from '../../services/rest.service';
+import { RestService, MetaBuilderService } from '../../services';
+import { Meta } from '@angular/platform-browser';
 import { Post, PostCategory } from '../../models';
 import { Router } from '@angular/router';
 @Component({
@@ -9,8 +10,11 @@ export class BlogComponent implements OnInit {
     posts: Array<Post>;
     postCategories: Array<PostCategory>;
     restApiService: RestService;
-    constructor(private restService: RestService, private router: Router) {
-
+    constructor(private restService: RestService, private router: Router, private meta: Meta, private metaBuilder: MetaBuilderService) {
+        this.meta = this.metaBuilder.BuildMeta(this.meta, {
+            title: 'Blog', 
+            metaDescription: 'This blog highlights some of our work'
+        })        
     }
     ngOnInit() {
         this.restService.getPosts().subscribe((posts: Array<Post>) => {

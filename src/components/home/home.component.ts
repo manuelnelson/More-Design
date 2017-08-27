@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RestService } from '../../services/rest.service';
+import { RestService, MetaBuilderService } from '../../services';
+import { Meta } from '@angular/platform-browser';
 import { Home, Image } from '../../models';
 @Component({
     template: require('./home.component.html')
@@ -8,7 +9,11 @@ export class HomeComponent implements OnInit {
     home: Home;
     carousel: Array<Image> = new Array<Image>();
     restApiService: RestService;
-    constructor(private restService: RestService) {
+    constructor(private restService: RestService, private meta: Meta, private metaBuilder: MetaBuilderService) {
+        this.meta = this.metaBuilder.BuildMeta(this.meta, {
+            title: 'Home', 
+            metaDescription: 'MORE design build is a niche, go to company for design and construction.'
+        })        
     }
     ngOnInit() {
         this.restService.getHome().subscribe((home: Home) => {

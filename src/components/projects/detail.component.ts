@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { RestService, MetaBuilderService } from '../../services';
 import { Project, ProjectType, Slide } from '../../models';
 import { Router, ActivatedRoute } from '@angular/router';
+import { RestService, MetaBuilderService } from '../../services';
 import { Meta } from '@angular/platform-browser';
 declare var window: any;
 @Component({
