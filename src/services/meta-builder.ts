@@ -7,69 +7,69 @@ export class MetaBuilderService {
     constructor() {}
     BuildMeta(meta: Meta, item: any){
       const siteTag = " | More Design";
-      meta.addTag({
+      meta.updateTag({
         property: "og:url",
         name: "url",
         content: window.location.href
       })
-      meta.addTag({
+      meta.updateTag({
         property: "og:site_name",
         content: "More Design"
       })
 
       if(item.title){
-        meta.addTag({
+        meta.updateTag({
           name: "title",
           content: item.title + siteTag
         })
-        meta.addTag({
+        meta.updateTag({
           property: "og:title",
           name: "title",
           content: item.title + siteTag
         })
-        meta.addTag({
+        meta.updateTag({
           name: "twitter:title",
           content: item.title
         })
       }
       let keywords = item.keywords ? item.keywords : 'MORE design build, architecture, interior design, dallas, texas, modern, classic';
-      meta.addTag({
+      meta.updateTag({
         name: "keywords",
         content: keywords
       });
       
       if(item.metaDescription){
-        meta.addTag({
+        meta.updateTag({
           name: "description",
           content: item.metaDescription
         })
-        meta.addTag({
+        meta.updateTag({
           name: "og:description",
           content: item.metaDescription
         })
       }
       if(item.thumbnailImage && item.thumbnailImage.url){
-        meta.addTag({
+        meta.updateTag({
           property: "og:image",
           name: "image",
           content: item.thumbnailImage.url
         })
-        meta.addTag({
+        meta.updateTag({
           property: "og:image",
           name: "image",
           content: item.thumbnailImage.url
         })
-        meta.addTag({
+        meta.updateTag({
           property: "og:image",
           name: "image",
           content: item.thumbnailImage.url
         })  
-        meta.addTag({
+        meta.updateTag({
           name: "twitter:image",
           content: item.thumbnailImage.url
         })
       }
-      meta.addTag({
+      meta.updateTag({
         name: "twitter:card",
         content: "summary"
       })
