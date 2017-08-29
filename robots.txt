@@ -1,2 +1,3 @@
 User-agent: *
 Disallow: /keystone/
+Sitemap: http://www.moredesignbuild.com/sitemap.xml

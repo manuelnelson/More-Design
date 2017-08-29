@@ -89,31 +89,32 @@ keystone.set('nav', {
 // Start Keystone to connect to your database and initialise the web server
 keystone.start();
 
+function addSitemapRoute(map, routes, route){
+	map[route] = ['get']
+	routes[route] = {
+		'changefreq': 'monthly'
+	}
+}
 if(process.env.NODE_ENV && process.env.NODE_ENV.indexOf('generate') > -1){
 	var sitemap = require('express-sitemap')
 	//we only care about projects and blogs
 	keystone.list('Project').model.find().exec(function(err,results){
 		let map = {}
 		let routes = {}
-		results.map(x=>{
-			map['/projects/' + x.slug] = ['get']
-			routes['/projects/' + x.slug] = {
-				'changefreq': 'monthly'
-			}
-		})
+		results.map(x=> addSitemapRoute(map,routes,`/projects/${x.slug}`));
 		keystone.list('Post').model.find().exec(function(err,posts){
-				posts.map(x=>{
-					map['/blog/post/' + x.slug] = ['get']
-					routes['/blog/post/' + x.slug] = {
-						'changefreq': 'monthly'
-					}
-				})
-				sitemap({
-					http: "https",
-					url: "moredesignbuild.com",
-					map: map,
-					route: routes
-				}).XMLtoFile()
+			posts.map(x=> addSitemapRoute(map,routes,`/blog/post/${x.slug}`));
+			addSitemapRoute(map,routes,'/');
+			addSitemapRoute(map,routes,'/about');
+			addSitemapRoute(map,routes,'/projects');
+			addSitemapRoute(map,routes,'/blog');
+			addSitemapRoute(map,routes,'/contact');
+			sitemap({
+				http: "https",
+				url: "www.moredesignbuild.com",
+				map: map,
+				route: routes
+			}).XMLtoFile()
 		})
 	})
 
