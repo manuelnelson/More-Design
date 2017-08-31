@@ -1,4 +1,4 @@
-<div *ngFor="let slide of slides; let i = index" class="slide" (swipeleft)="previous()" (swiperight)="next()" [ngClass]="{'active':slide.active, 'left':slide.left,'right':slide.right,'prev':slide.prev,'next':slide.next}" [style.background-image]="'url(' + slide.image.secure_url + ')'">
+<div *ngFor="let slide of slides; let i = index" class="slide" (swipeleft)="next()" (swiperight)="previous()" [ngClass]="{'active':slide.active, 'left':slide.left,'right':slide.right,'prev':slide.prev,'next':slide.next}" [style.background-image]="'url(' + slide.image.secure_url + ')'">
 </div>
 <div class="btn-carousel next icon-arrow-right2" (click)="next()"></div>
 <div class="btn-carousel previous icon-arrow-right2" (click)="previous()"></div>
@@ -8,5 +8,5 @@
 <div class="social-section">
     <a href="https://www.facebook.com/sharer/sharer.php?u={{currentUrl}}" class="icon icon-facebook"></a>
     <a href="https://www.pinterest.com/pin/create/button/" data-pin-custom="true" class="icon icon-pinterest2"></a>
-    <a href="https://plus.google.com/share?url={{currentUrl}}" class="icon icon-google-plus"></a>
+    <!-- <a href="https://plus.google.com/share?url={{currentUrl}}" class="icon icon-google-plus"></a> -->
 </div>

@@ -116,4 +116,13 @@
             }
         }
     };
+    @include bp-max($bp-between){
+        .btn-carousel{
+            $buttonSize: 30px;
+            $buttonFontSize: 30px;
+            height: $buttonSize;
+            width: $buttonSize;
+            font-size: $buttonFontSize;        
+        }
+    }
 }

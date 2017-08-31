@@ -1,4 +1,4 @@
-<div class="detail-page post-detail">
+<div class="detail-page post-detail" *ngIf="post">
 	<div class="carousel">
 		<carousel-component *ngIf="post?.images.length >0" [slides]="post?.images"></carousel-component>
 	</div>
@@ -15,8 +15,8 @@
 				<h1 class="post-title">{{post?.title}}</h1>
 				<div class="rich-text" [innerHTML]="post?.content?.extended">
 				</div>
-				<span class="post-button previous" *ngIf="previousPost" [routerLink]="['/blog/post',previousPost.slug]">Previous</span>
-				<span class="post-button next" *ngIf="nextPost" [routerLink]="['/blog/post',nextPost.slug]">Next</span>
+				<a class="post-button previous" *ngIf="previousPost" [routerLink]="['/blog/post',previousPost.slug]">Previous</a>
+				<a class="post-button next" *ngIf="nextPost" [routerLink]="['/blog/post',nextPost.slug]">Next</a>
 			</div>
 		</div>
 	</div>
