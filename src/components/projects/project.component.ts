@@ -20,7 +20,6 @@ export class ProjectComponent implements OnInit {
         })        
     }
     ngOnInit() {
-
         this.restService.getProjects().subscribe((projects: Array<Project>) => {
             this.projects = projects;
         });

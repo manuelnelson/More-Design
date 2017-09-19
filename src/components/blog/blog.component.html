@@ -6,7 +6,7 @@
 		</div>
 		<div class="project-list">
 			<div class="project-item" [routerLink]="['/blog/post',post.slug]" *ngFor="let post of posts" [ngClass]="{'hidden':post.hide}">
-				<div class="project-thumbnail" *ngIf="post.thumbnailImage" [style.background-image]="'url(' + post.thumbnailImage?.secure_url + ')'">
+				<div class="project-thumbnail" *ngIf="post.thumbnailImage" [style.background-image]="'url(' + post.thumbnailFitImage + ')'">
 				</div>
 				<div class="project-details">
 					<span class="detail-item">{{post.title}}</span>
