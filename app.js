@@ -1,5 +1,5 @@
-require('dotenv').load()
-
+var dotenv = require('dotenv');
+var envConfig = dotenv.config({silent: true})
 var express = require('express'),
     app = express(),
     keystone = require('keystone'),
