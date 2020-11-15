@@ -6,8 +6,8 @@ var express = require('express'),
     serve = require('serve-static'),
     favicon = require('serve-favicon'),
     body = require('body-parser'),
-    cookieParser = require('cookie-parser'),
-    multer = require('multer')
+    cookieParser = require('cookie-parser')
+    // multer = require('multer')
 
 var cookieSecret = 'lasdfjoijqw3r8uadsflkj'
 
@@ -15,7 +15,7 @@ var cookieSecret = 'lasdfjoijqw3r8uadsflkj'
 app.use(cookieParser(cookieSecret))
 app.use(body.urlencoded({ extended: true }))
 app.use(body.json())
-app.use(multer())
+// app.use(multer())
 
 keystone.init({
 	'name': 'More Design',
